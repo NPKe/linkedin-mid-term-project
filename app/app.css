@@ -1,5 +1,23 @@
 /* app css stylesheet */
 
+@font-face
+{
+  font-family:"LinkedIn-Glyphs";
+  src:url('/fonts/LinkedIn-Glyphs-16px.eot');
+  src:url('/fonts/LinkedIn-Glyphs-16px.eot?#iefix') format('embedded-opentype'),url('/fonts/LinkedIn-Glyphs-16px.woff') format('woff'), url('/fonts/LinkedIn-Glyphs-16px.ttf') format('truetype');
+  font-weight:normal;
+  font-style:normal;
+}
+
+@font-face
+{
+  font-family:"LinkedIn-Glyphs-2.0.7";
+  src:url('/fonts/LinkedIn-Glyphs-16px.eot');
+  src:url('/fonts/LinkedIn-Glyphs-16px.eot?#iefix') format('embedded-opentype'),url('/fonts/LinkedIn-Glyphs-16px.woff') format('woff'), url('/fonts/LinkedIn-Glyphs-16px.ttf') format('truetype');
+  font-weight:normal;
+  font-style:normal;
+}
+
 .menu {
   list-style: none;
   border-bottom: 0.1em solid black;
@@ -29,9 +47,38 @@
   padding: 0;
 }
 
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
 body
 {
   margin: 0px;
+  background: url(images/background.png);
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+}
+
+a {
+  text-decoration: none;
 }
 
 #cover-photo {
@@ -45,4 +92,440 @@ body
 .proflie-picture img {
   width: 240px;
   height: 240px;
+}
+
+#container {
+  width: 974px;
+  margin: auto;
+  position: relative;
+  top: -190px;
+  overflow: hidden;
+}
+
+.top-profile-card {
+  background: #F6F6F6;
+}
+
+.proflie-picture {
+  float: left;
+}
+
+.profile-overview {
+  float: left;
+  padding: 25px 40px;
+  width: 654px;
+  opacity:
+}
+
+.profile-card {
+  overflow: hidden;
+}
+
+h1 {
+  font-size: 22px;
+  font-weight: bold;
+  line-height: 24px;
+  color: #000;
+  margin: 0px;
+}
+
+.headline-title {
+  font-size: 18px;
+  font-weight: normal;
+  line-height: 22px;
+  color: #666;
+  margin: 0px;
+  padding: 5px 0px;
+}
+
+.location {
+  color: #006fa6;
+}
+
+.location-container {
+  font-size: 13px;
+  line-height: 17px;
+}
+
+.industry {
+  color: #66696a;
+}
+
+table.overview {
+  font-size: 13px;
+  margin-top: 10px;
+  border-spacing: 0;
+  border-collapse: collapse;
+  color: #333;
+}
+
+.overview-time {
+  color: #96999c;
+  line-height: 17px;
+  padding: 0;
+  margin: 0;
+  width: 80px;
+}
+
+ul {
+  list-style: none;
+}
+
+.overview li {
+  display:inline;
+}
+
+.overview tr {
+  padding: 0x;
+  margin: 0px;
+  line-height: 17px;
+}
+
+td {
+  padding: 0px;
+  margin: 0px;
+  line-height: 17px;
+}
+
+tbody {
+  margin: 0;
+  padding: 0;
+}
+
+.profile-overview-content {
+  padding-bottom: 5px;
+}
+
+.account-icon {
+  background: url(images/badge.png) no-repeat;
+  background-position: 0 0;
+  width: 94px;
+  height: 22px;
+  position: absolute;
+  right: 40px;
+}
+
+.follow-btn {
+  border: solid 1px #1b5480;
+  background: #287bbc;
+  color: #fff;
+  font-weight: 600;
+  line-height: 29px;
+  border-radius: 4px;
+  padding: 0 13px;
+}
+
+.profile-aux {
+  padding-top: 5px;
+  overflow: hidden;
+}
+
+.follow-action {
+  float: left;
+}
+
+.connect-action {
+  padding-left: 10px;
+  float: left;
+  font-size: 12px;
+  line-height: 14px;
+  padding-top: 3px;
+}
+
+.follower-count {
+  float: right;
+  font-size: 11px;
+  color: #999;
+  padding: 7px 0 0 10px;
+  line-height: 15px;
+  vertical-align: bottom;
+  text-align: right;
+}
+
+.connect-action a {
+  font-weight: 600;
+  color: #069;
+}
+
+strong {
+  font-weight: bold;
+  display: block;
+  color: #333;
+  font-size: 18px;
+  line-height: 14px;
+}
+
+.profile-card-extra {
+  box-shadow: 0 1px 0 #fff inset;
+  border: 1px solid #B1B1B1;
+  border-top: 1px dashed #ccc;
+  background: #f6f6f6;
+  overflow: hidden;
+  font-size: 11px;
+  color: #666;
+}
+
+.public-profile {
+  float: left;
+  padding: 10px 20px;
+}
+
+.contact-info {
+  float: right;
+  border-left: 1px solid #ccc;
+  padding: 10px;
+  background-image: -webkit-linear-gradient(top, #ececec 0%,#e1e1e1 100%);
+  padding-right: 15px;
+}
+
+.view-public-profile {
+  color: #666;
+  background: url(images/sprite_profile_top_card_v8.png) no-repeat 0 -249px;
+  padding-left: 17px;
+}
+
+.public-profile a {
+  color: #666;
+}
+
+#background {
+  margin-top: 10px;
+  background: #fff;
+  width: 646px;
+  float: left;
+}
+
+h2 {
+  background: #333;
+  color: #fff;
+  font-size: 13px;
+  line-height: 30px;
+  font-weight: 600;
+  padding: 0px 15px;
+  display: inline-block;
+}
+
+.background-content {
+  padding: 20px;
+}
+
+.background-content h3 {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-top: 0px;
+  margin-bottom: 23px;
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 18px;
+  color: #434649;
+}
+
+.background-section {
+  padding-bottom: 30px;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.summary-header {
+  padding-top: 0px;
+}
+
+.experience-header {
+  position: relative;
+  overflow: hidden;
+}
+
+.volunteering-header {
+  padding-top: 20px;
+}
+
+.skills-header {
+  padding-top: 20px;
+}
+
+.education-header {
+  padding-top: 20px;
+}
+
+h4 {
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 18px;
+  color: #000;
+  text-decoration: none;
+}
+
+h5 {
+  font-size: 14px;
+  line-height: 17px;
+  color: #434649;
+}
+
+.experience-date-location {
+  line-height: 17px;
+  color: #434649;
+}
+
+.experience-logo {
+
+}
+
+.header-left {
+  float: left;
+
+}
+
+.header-right {
+  float: right;
+}
+
+.experience {
+  margin-bottom: 30px;
+}
+
+#background-volunteering-container ul
+{
+  padding-top: 10px;
+  padding-bottom: 25px;
+  list-style: none;
+}
+
+#background-volunteering-container li:before {
+  content: "•";
+  padding-right: 8px;
+  color: #000;
+  line-height: 17px;
+}
+
+.skills-item h5 {
+  margin-top: 30px;
+  margin-bottom: 0px;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 16px;
+  color: #434649;
+}
+
+.skills-section {
+  margin-top: 20px;
+}
+
+.endorse-count {
+  font-weight: bold;
+  color: #fff;
+  background: #1ba8e5;
+  padding: 6px 3px;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  min-width: 50px;
+}
+
+.skill-pill {
+
+}
+
+.endorse-item-name {
+  background: #f0f0f0;
+  line-height: 25px;
+  padding: 6px 13px;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  margin-left: -4px;
+}
+
+.skills-section li {
+  line-height: 25px;
+  margin-bottom: 6px;
+}
+
+.degree {
+  line-height: 17px;
+  color: #434649;
+}
+
+.major {
+  line-height: 17px;
+  color: #434649;
+}
+
+.education-date {
+  line-height: 17px;
+  color: #434649;
+}
+
+.education-first {
+  overflow: hidden;
+}
+
+.education-logo {
+  width: 60px;
+  height: 60px;
+}
+
+#side-bar {
+  float: right;
+  background: #fff;
+  width: 318px;
+  margin-left: 10px;
+  min-height: 1870px;
+  margin-top: 10px;
+}
+
+.education-header h3:before {
+  font-family: "LinkedIn-Glyphs-2.0.7","LinkedIn-Glyphs";
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: inherit;
+  speak: none;
+  font-size: 32px;
+  color: inherit;
+  content: "\e03b";
+  padding-right: 17px;
+}
+
+.skills-header h3:before {
+  font-family: "LinkedIn-Glyphs-2.0.7","LinkedIn-Glyphs";
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: inherit;
+  speak: none;
+  font-size: 32px;
+  color: inherit;
+  content: "\e03c";
+  padding-right: 17px;
+}
+
+.volunteering-header h3:before {
+  font-family: "LinkedIn-Glyphs-2.0.7","LinkedIn-Glyphs";
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: inherit;
+  speak: none;
+  font-size: 32px;
+  color: inherit;
+  content: "\e041";
+  padding-right: 17px;
+}
+
+.experience-header h3:before {
+  font-family: "LinkedIn-Glyphs-2.0.7","LinkedIn-Glyphs";
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: inherit;
+  speak: none;
+  font-size: 32px;
+  color: inherit;
+  content: "\e03a";
+  padding-right: 17px;
+}
+
+.summary-header h3:before {
+  font-family: "LinkedIn-Glyphs-2.0.7","LinkedIn-Glyphs";
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: inherit;
+  speak: none;
+  font-size: 32px;
+  color: inherit;
+  content: "\e039";
+  padding-right: 17px;
 }
