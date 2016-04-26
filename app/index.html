@@ -16,7 +16,6 @@
     <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
 <body>
-
 <header>
     <div id="cover-photo"></div>
 </header>
@@ -82,11 +81,14 @@
                 <div class="profile-aux">
                     <div class="profile-actions">
                         <div class="follow-action">
-                            <button class="follow-btn">Follow | ></button>
+                            <button class="follow-btn">Follow</button>
+                            <button class="drop-caret">
+                                <span class="caret">More options</span>
+                            </button>
                         </div>
 
                         <div class="connect-action">
-                            <p>Knoew Jeff?</p>
+                            <p>Know Jeff?</p>
                             <a href="#">Connect</a>
                         </div>
                     </div>
@@ -307,7 +309,7 @@
                     </ul>
 
                     <h5>Jeff also knows about...</h5>
-                    <ul class="skills-section">
+                    <ul class="skills-section more-skill">
                         <li>
                                  <span class="skill-pill">
                                     <a href="#" class="endorse-count">65</a>
@@ -333,6 +335,13 @@
                                  <span class="skill-pill">
                                     <a href="#" class="endorse-count">6</a>
                                     <span class="endorse-item-name">Mobile Applications</span>
+                                </span>
+                        </li>
+
+                        <li>
+                                 <span class="skill-pill">
+                                    <a href="#" class="endorse-count">10</a>
+                                    <span class="endorse-item-name">Business Operations</span>
                                 </span>
                         </li>
                     </ul>
@@ -367,6 +376,7 @@
     <div id="side-bar">
 
     </div>
+
 </div>
 <!-- In production use:
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>

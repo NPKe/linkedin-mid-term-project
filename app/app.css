@@ -58,7 +58,7 @@ dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
 article, aside, canvas, details, embed,
-figure, figcaption, footer, header,
+figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
   margin: 0;
@@ -108,6 +108,8 @@ a {
 
 .proflie-picture {
   float: left;
+  width: 240px;
+  height: 240px;
 }
 
 .profile-overview {
@@ -211,8 +213,15 @@ tbody {
   color: #fff;
   font-weight: 600;
   line-height: 29px;
-  border-radius: 4px;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
   padding: 0 13px;
+  background-color: #287bbc;
+  border-color: #1b5480;
+  background-image: -webkit-linear-gradient(top, #287bbc 0%,#23639a 100%);
+  background-image: -moz-linear-gradient(top, #287bbc 0%,#23639a 100%);
+  background-image: -o-linear-gradient(top, #287bbc 0%,#23639a 100%);
+  background-image: linear-gradient(top, #287bbc 0%,#23639a 100%);
 }
 
 .profile-aux {
@@ -273,7 +282,7 @@ strong {
 .contact-info {
   float: right;
   border-left: 1px solid #ccc;
-  padding: 10px;
+  padding: 8px;
   background-image: -webkit-linear-gradient(top, #ececec 0%,#e1e1e1 100%);
   padding-right: 15px;
 }
@@ -293,20 +302,21 @@ strong {
   background: #fff;
   width: 646px;
   float: left;
+  border: 1px solid #B1B1B1;
+
 }
 
 h2 {
   background: #333;
   color: #fff;
   font-size: 13px;
-  line-height: 30px;
   font-weight: 600;
-  padding: 0px 15px;
+  padding: 7.5px 20px;
   display: inline-block;
 }
 
 .background-content {
-  padding: 20px;
+  padding: 0px 20px 20px 20px;
 }
 
 .background-content h3 {
@@ -323,6 +333,12 @@ h2 {
 .background-section {
   padding-bottom: 30px;
   border-bottom: 1px solid #e8e8e8;
+  padding-top: 20px;
+}
+
+.background-section:last-child
+{
+  border: none;
 }
 
 .summary-header {
@@ -335,15 +351,12 @@ h2 {
 }
 
 .volunteering-header {
-  padding-top: 20px;
 }
 
 .skills-header {
-  padding-top: 20px;
 }
 
 .education-header {
-  padding-top: 20px;
 }
 
 h4 {
@@ -382,7 +395,12 @@ h5 {
   margin-bottom: 30px;
 }
 
-#background-volunteering-container ul
+.experience:last-child
+{
+  margin-bottom: 0px;
+}
+
+.volunteering-opportunities ul
 {
   padding-top: 10px;
   padding-bottom: 25px;
@@ -409,6 +427,10 @@ h5 {
   margin-top: 20px;
 }
 
+.more-skill {
+  margin-top: 20px;
+}
+
 .endorse-count {
   font-weight: bold;
   color: #fff;
@@ -417,6 +439,7 @@ h5 {
   border-top-left-radius: 4px;
   border-bottom-left-radius: 4px;
   min-width: 50px;
+  border-bottom: 1px solid #1ba8e5;
 }
 
 .skill-pill {
@@ -430,11 +453,18 @@ h5 {
   border-top-right-radius: 4px;
   border-bottom-right-radius: 4px;
   margin-left: -4px;
+  border-bottom: 1px solid #ddd;
+  border-right: 1px solid #ddd;
 }
 
 .skills-section li {
   line-height: 25px;
   margin-bottom: 6px;
+}
+
+.more-skill li
+{
+  display: inline-block;
 }
 
 .degree {
@@ -464,9 +494,9 @@ h5 {
 #side-bar {
   float: right;
   background: #fff;
-  width: 318px;
+  width: 316px;
   margin-left: 10px;
-  min-height: 1870px;
+  min-height: 1763px;
   margin-top: 10px;
 }
 
@@ -480,6 +510,7 @@ h5 {
   color: inherit;
   content: "\e03b";
   padding-right: 17px;
+  float: left;
 }
 
 .skills-header h3:before {
@@ -492,6 +523,7 @@ h5 {
   color: inherit;
   content: "\e03c";
   padding-right: 17px;
+  float: left;
 }
 
 .volunteering-header h3:before {
@@ -504,6 +536,7 @@ h5 {
   color: inherit;
   content: "\e041";
   padding-right: 17px;
+  float: left;
 }
 
 .experience-header h3:before {
@@ -516,6 +549,7 @@ h5 {
   color: inherit;
   content: "\e03a";
   padding-right: 17px;
+  float: left;
 }
 
 .summary-header h3:before {
@@ -528,4 +562,59 @@ h5 {
   color: inherit;
   content: "\e039";
   padding-right: 17px;
+  float: left;
+}
+
+.contact:before {
+  font-family: "LinkedIn-Glyphs-2.0.7","LinkedIn-Glyphs";
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: inherit;
+  speak: none;
+  font-size: 16px;
+  color: inherit;
+  content: "\e053";
+  padding-right: 10px;
+  float: left;
+}
+
+.contact
+{
+  display: inline;
+  font-size: 11px;
+  line-height: 17px;
+}
+
+.drop-caret {
+  border: solid 1px #1b5480;
+  background: #287bbc;
+  color: #fff;
+  line-height: 27px;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  margin-left: -7px;
+  background-color: #287bbc;
+  border-color: #1b5480;
+  background-image: -webkit-linear-gradient(top, #287bbc 0%,#23639a 100%);
+  background-image: -moz-linear-gradient(top, #287bbc 0%,#23639a 100%);
+  background-image: -o-linear-gradient(top, #287bbc 0%,#23639a 100%);
+  background-image: linear-gradient(top, #287bbc 0%,#23639a 100%);
+}
+
+.caret {
+  display: inline-block;
+  vertical-align: middle;
+  zoom: 1;
+  vertical-align: middle;
+  height: 0;
+  width: 0;
+  font-size: 0;
+  line-height: 0;
+  border-style: dashed;
+  border-color: transparent;
+  border-top-style: solid;
+  border-width: 5px 5px 0;
+  border-top-color: #fff;
+  overflow: hidden;
+  content: "\0020";
 }
