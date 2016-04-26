@@ -1,0 +1,63 @@
+{
+  "summary": "<p>Internet executive with over 20 years of experience, including general management of mid to large size organizations, corporate development, product development, business operations, and strategy.Currently CEO at LinkedIn, the web's largest and most powerful network of professionals.</p><br><p>Prior to LinkedIn, was an Executive in Residence at Accel Partners and Greylock Partners. Primarily focused on advising the leadership teams of the firm's existing consumer technology portfolio companies while also working closely with the firm’s partners to evaluate new investment opportunities.</p><br><p>Previously served in key leadership roles at Yahoo! for over seven years, most recently as the Executive Vice President of Yahoo!'s Network Division managing Yahoo's consumer web product portfolio, including Yahoo's Front Page, Mail, Search, and Media products.<p><br></p>Specialties: general management, corporate development, product development, business operations, strategy, product marketing, non-profit governance<p>",
+
+  "experience": [
+    {
+      "title": "CEO",
+      "company": "LinkedIn",
+      "date": "December 2008 – Present (7 years 5 months)",
+      "location": "",
+      "logo": "images/linkedin.png",
+      "description": "<p>Connecting the world's professionals to make them more productive and successful. Since joining the company in December 2008, LinkedIn has expanded its global platform to 23 languages and more than 30 offices around the world, grown its membership base from 33M to more than 347M, and increased its revenue from $78M to over $2.2B in 2014.</p>"
+    },
+    {
+      "title": "Member, Board of Directors",
+      "company": "Intuit",
+      "date": "April 2012 – Present (4 years 1 month)",
+      "location": "Mountain View, CA",
+      "logo": "images/experience-logo.png",
+      "description": "<p>With revenue of $4B+ and approximately 8,000 employees, Intuit is a leading provider of innovative business and financial management solutions for small and medium-sized businesses, consumers, accounting professionals and financial institutions.</p>"
+    },
+    {
+      "title": "Vice President Online",
+      "company": "Warner Bros.",
+      "date": "September 1994 – March 2000 (5 years 7 months)",
+      "location": "",
+      "logo": "images/world-bank.png",
+      "description": "<p>Helped oversee Warner Bros.' online efforts, including Warner Bros. Online and Entertaindom (one of the web's first original entertainment destination sites). </p><br><p>In December, 1994, began developing the initial business plan for Warner Bros. Online while an analyst in Corporate Planning & Development.</p>"
+    },
+    {
+      "title": "Senior Analyst",
+      "company": "Braxton Associates",
+      "date": "September 1992 – September 1994 (2 years 1 month)",
+      "location": "Boston",
+      "logo": "",
+      "description": "<p>Analyst for strategic management consulting division of Deloitte & Touche. Case work included scenario planning, international expansion, brand consolidation, and new distribution strategies across multiple industries including food, health care, and energy.</p>"
+    }
+  ],
+
+  "volunteering": {
+    "opportunities": ["Skills-based volunteering (pro bono consulting)"],
+    "interests": ["Education", "Poverty Alleviation", "Social Services"]
+  },
+
+  "skill": [
+    {"name": "Business Strategy", "endorseCount": 99},
+    {"name": "Leadership", "endorseCount": 99},
+    {"name": "Strategy", "endorseCount": 90},
+    {"name": "Product Marketing", "endorseCount": 87},
+    {"name": "Product Development", "endorseCount": 69},
+    {"name": "Social Media", "endorseCount": 65},
+    {"name": "User Experience", "endorseCount": 49},
+    {"name": "Motivation", "endorseCount": 9},
+    {"name": "Mobile Applications", "endorseCount": 6},
+    {"name": "Business Operations", "endorseCount": 5}
+  ],
+
+  "education": [
+    {
+      "school": "University of Pennsylvania - The Wharton School", "degree": "Bachelor of Science,",
+      "major": "Economics", "date": "1988 – June 1992", "logo": "images/education.png"
+    }
+  ]
+}

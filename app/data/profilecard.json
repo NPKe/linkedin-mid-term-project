@@ -1,0 +1,13 @@
+{
+  "avatar": "images/avatar.jpg",
+  "name": "Jeff Weiner",
+  "headline": "CEO at LinkedIn",
+  "location": "San Francisco Bay Area",
+  "industry": "Internet",
+  "current": ["LinkedIn", "Intuit", "DonorsChoose"],
+  "previous": ["Malaria No More", "Accel Partners", "Greylock"],
+  "education": ["University of Pennsylvania - The Wharton School"],
+  "followers": 4039059,
+  "publicProfile": "jeffweiner08"
+}
+

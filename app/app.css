@@ -3,8 +3,9 @@
 @font-face
 {
   font-family:"LinkedIn-Glyphs";
-  src:url('/fonts/LinkedIn-Glyphs-16px.eot');
-  src:url('/fonts/LinkedIn-Glyphs-16px.eot?#iefix') format('embedded-opentype'),url('/fonts/LinkedIn-Glyphs-16px.woff') format('woff'), url('/fonts/LinkedIn-Glyphs-16px.ttf') format('truetype');
+  src:url('fonts/LinkedIn-Glyphs-16px.eot');
+  src:url('fonts/LinkedIn-Glyphs-16px.eot?#iefix') format('embedded-opentype'),
+  url('fonts/LinkedIn-Glyphs-16px.woff') format('woff'), url('fonts/LinkedIn-Glyphs-16px.ttf') format('truetype');
   font-weight:normal;
   font-style:normal;
 }
@@ -12,8 +13,9 @@
 @font-face
 {
   font-family:"LinkedIn-Glyphs-2.0.7";
-  src:url('/fonts/LinkedIn-Glyphs-16px.eot');
-  src:url('/fonts/LinkedIn-Glyphs-16px.eot?#iefix') format('embedded-opentype'),url('/fonts/LinkedIn-Glyphs-16px.woff') format('woff'), url('/fonts/LinkedIn-Glyphs-16px.ttf') format('truetype');
+  src:url('fonts/LinkedIn-Glyphs-16px.eot');
+  src:url('fonts/LinkedIn-Glyphs-16px.eot?#iefix') format('embedded-opentype'),
+  url('fonts/LinkedIn-Glyphs-16px.woff') format('woff'), url('fonts/LinkedIn-Glyphs-16px.ttf') format('truetype');
   font-weight:normal;
   font-style:normal;
 }
@@ -58,7 +60,7 @@ dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
 article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
+figure, figcaption, footer, header,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
   margin: 0;
@@ -116,7 +118,6 @@ a {
   float: left;
   padding: 25px 40px;
   width: 654px;
-  opacity:
 }
 
 .profile-card {
@@ -178,7 +179,7 @@ ul {
 }
 
 .overview tr {
-  padding: 0x;
+  padding: 0px;
   margin: 0px;
   line-height: 17px;
 }
@@ -465,6 +466,9 @@ h5 {
 .more-skill li
 {
   display: inline-block;
+    float: left;
+    margin-bottom: 10px;
+    padding-right: 5px;
 }
 
 .degree {
@@ -496,7 +500,7 @@ h5 {
   background: #fff;
   width: 316px;
   margin-left: 10px;
-  min-height: 1763px;
+  min-height: 2025px;
   margin-top: 10px;
 }
 
@@ -617,4 +621,12 @@ h5 {
   border-top-color: #fff;
   overflow: hidden;
   content: "\0020";
+}
+
+.experience-summary {
+    padding-top: 10px;
+}
+
+.skills-item ul {
+    overflow: hidden;
 }

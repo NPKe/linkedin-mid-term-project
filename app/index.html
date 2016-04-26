@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html lang="en" ng-app="myApp" class="no-js"> <!--<![endif]-->
+<!--[if lt IE 7]>      <html lang="en" ng-app="linkedinLite" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="linkedinLite" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="linkedinLite" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" ng-app="linkedinLite" class="no-js"> <!--<![endif]-->
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -21,10 +21,10 @@
 </header>
 
 <div id="container">
-    <div class="top-profile-card">
+    <div ng-controller="ProfileCardCtrl" class="top-profile-card">
         <div class="profile-card">
             <div class="proflie-picture">
-                <img src="images/avatar.jpg">
+                <img src="{{profileCard.avatar}}">
             </div>
 
             <div class="profile-overview">
@@ -33,11 +33,11 @@
                         <div class="account-icon"></div>
 
                         <div class="basic-info">
-                            <h1>Jeff Weiner</h1>
-                            <p class="headline-title">CEO at LinkedIn</p>
+                            <h1>{{profileCard.name}}</h1>
+                            <p class="headline-title">{{profileCard.headline}}</p>
                             <div class="location-container">
-                                <span class="location">San Francisco Bay Area</span> |
-                                <span class="industry">Internet</span>
+                                <span class="location">{{profileCard.location}}</span> |
+                                <span class="industry">{{profileCard.industry}}</span>
                             </div>
                         </div>
                     </div>
@@ -48,9 +48,7 @@
                             <td class="overview-time">Current</td>
                             <td>
                                 <ul>
-                                    <li>LinkedIn,</li>
-                                    <li>Intuit,</li>
-                                    <li>DonorsChoose</li>
+                                    <li ng-repeat="curr in profileCard.current">{{curr}}{{$last ? ' ' : ', '}}</li>
                                 </ul>
                             </td>
                         </tr>
@@ -59,9 +57,7 @@
                             <td class="overview-time">Previous</td>
                             <td>
                                 <ul>
-                                    <li>Malaria No More,</li>
-                                    <li>Accel Partners,</li>
-                                    <li>Greylock</li>
+                                    <li  ng-repeat="prev in profileCard.previous">{{prev}}{{$last ? ' ' : ', '}}</li>
                                 </ul>
                             </td>
                         </tr>
@@ -70,7 +66,7 @@
                             <td class="overview-time">Education</td>
                             <td>
                                 <ul>
-                                    <li>University of Pennsylvania - The Wharton School</li>
+                                    <li ng-repeat="school in profileCard.education">{{school}}{{$last ? ' ' : ', '}}</li>
                                 </ul>
                             </td>
                         </tr>
@@ -94,13 +90,15 @@
                     </div>
 
                     <div class="follower-count">
-                        <strong>4,039,059</strong>followers</div>
+                        <strong>{{profileCard.followers | number:0}}</strong>followers</div>
                 </div>
             </div>
         </div>
         <div class="profile-card-extra">
             <div class="public-profile">
-                <a class="view-public-profile" href="https://www.linkedin.com/in/jeffweiner08">https://www.linkedin.com/in/jeffweiner08</a>
+                <a class="view-public-profile" href="https://www.linkedin.com/in/{{profileCard.publicProfile}}">
+                    https://www.linkedin.com/in/{{profileCard.publicProfile}}
+                </a>
             </div>
             <div class="contact-info">
                 <span class="contact">Contact Info</span>
@@ -108,23 +106,15 @@
         </div>
     </div>
 
-    <div id="background" class="profile-background">
+    <div ng-controller="BackgroundCtrl" id="background" class="profile-background">
         <h2>Background</h2>
         <div class="background-content">
             <div id="background-summary-container" class="background-section">
                 <div class="summary-header">
                     <h3>Summary</h3>
                 </div>
-                <div class="summary-content">
-                    <p>Internet executive with over 20 years of experience, including general management of mid to large size organizations, corporate development, product development, business operations, and strategy. </p><br>
+                <div ng-bind-html="background.summary" class="summary-content">
 
-                    <p>Currently CEO at LinkedIn, the web's largest and most powerful network of professionals. </p><br>
-
-                    <p>Prior to LinkedIn, was an Executive in Residence at Accel Partners and Greylock Partners. Primarily focused on advising the leadership teams of the firm's existing consumer technology portfolio companies while also working closely with the firm’s partners to evaluate new investment opportunities.</p><br>
-
-                    <p>Previously served in key leadership roles at Yahoo! for over seven years, most recently as the Executive Vice President of Yahoo!'s Network Division managing Yahoo's consumer web product portfolio, including Yahoo's Front Page, Mail, Search, and Media products.</p><br>
-
-                    <p>Specialties: general management, corporate development, product development, business operations, strategy, product marketing, non-profit governance</p>
                 </div>
             </div>
 
@@ -133,81 +123,30 @@
                     <h3>Experience</h3>
                 </div>
 
-                <div class="experience">
-                    <div class="experience-header">
-                        <div class="header-left">
-                            <h4>Member, Board of Directors</h4>
-                            <h5>Intuit</h5>
+                <div class="experience-container">
+                    <div ng-repeat="exp in background.experience" class="experience">
+                        <div class="experience-header">
+                            <div class="header-left">
+                                <h4>{{exp.title}}</h4>
+                                <h5>{{exp.company}}</h5>
 
-                            <div class="experience-date-location">
+                                <div class="experience-date-location">
                                     <span class="experience-date">
-                                        April 2012 – Present (4 years 1 month)
+                                        {{exp.date}}
                                     </span>
                                     <span class="experience-location">
-                                        Mountain View, CA
+                                        {{exp.location}}
                                     </span>
+                                </div>
+                            </div>
+                            <div class="header-right">
+                                <h5 ng-if="exp.logo" class="experience-logo">
+                                    <img src="{{exp.logo}}">
+                                </h5>
                             </div>
                         </div>
-                        <div class="header-right">
-                            <h5 class="experience-logo">
-                                <img src="images/experience-logo.png">
-                            </h5>
+                        <div ng-bind-html="exp.description" class="experience-summary">
                         </div>
-                    </div>
-                    <div class="experience-summary">
-                        <p>With revenue of $4B+ and approximately 8,000 employees, Intuit is a leading provider of innovative business and financial management solutions for small and medium-sized businesses, consumers, accounting professionals and financial institutions.</p>
-                    </div>
-                </div>
-
-                <div class="experience">
-                    <div class="experience-header">
-                        <div class="header-left">
-                            <h4>Vice President Online</h4>
-                            <h5>Warner Bros.</h5>
-
-                            <div class="experience-date-location">
-                                    <span class="experience-date">
-                                        September 1994 – March 2000 (5 years 7 months)
-                                    </span>
-                                    <span class="experience-location">
-
-                                    </span>
-                            </div>
-                        </div>
-                        <div class="header-right">
-                            <h5 class="experience-logo">
-                                <img src="images/world-bank.png">
-                            </h5>
-                        </div>
-                    </div>
-                    <div class="experience-summary">
-                        <p>Helped oversee Warner Bros.' online efforts, including Warner Bros. Online and Entertaindom (one of the web's first original entertainment destination sites). </p><br>
-                        <p>In December, 1994, began developing the initial business plan for Warner Bros. Online while an analyst in Corporate Planning & Development.</p>
-                    </div>
-                </div>
-
-                <div class="experience">
-                    <div class="experience-header">
-                        <div class="header-left">
-                            <h4>Senior Analyst</h4>
-                            <h5>Braxton Associates</h5>
-                            <div class="experience-date-location">
-                                    <span class="experience-date">
-                                        September 1992 – September 1994 (2 years 1 month)
-                                    </span>
-                                    <span class="experience-location">
-                                        Boston
-                                    </span>
-                            </div>
-                        </div>
-                        <div class="header-right">
-                            <h5 class="experience-logo">
-
-                            </h5>
-                        </div>
-                    </div>
-                    <div class="experience-summary">
-                        <p>Analyst for strategic management consulting division of Deloitte & Touche. Case work included scenario planning, international expansion, brand consolidation, and new distribution strategies across multiple industries including food, health care, and energy.</p>
                     </div>
                 </div>
             </div>
@@ -220,16 +159,14 @@
                 <div class="volunteering-opportunities">
                     <h4>Opportunities Jeff is looking for:</h4>
                     <ul>
-                        <li>Skills-based volunteering (pro bono consulting)</li>
+                        <li ng-repeat="opportunity in background.volunteering.opportunities">{{opportunity}}</li>
                     </ul>
                 </div>
 
                 <div class="volunteering-interests">
                     <h4>Causes Josh cares about:</h4>
                     <ul>
-                        <li>Education</li>
-                        <li>Poverty Alleviation</li>
-                        <li>Social Services</li>
+                        <li  ng-repeat="interest in background.volunteering.interests">{{interest}}</li>
                     </ul>
                 </div>
             </div>
@@ -242,63 +179,11 @@
                 <div class="skills-item">
                     <h5>Top Skills</h5>
                     <ul class="skills-section">
-                        <li>
-                                <span class="skill-pill">
-                                    <span class="endorse-count">99+</span>
-                                    <span class="endorse-item-name">Business Strategy</span>
-                                </span>
-
-                            <div class="endorsers-container">
-                                <ul class="endorsers-pics">
-                                    <li></li>
-                                </ul>
-                            </div>
-                        </li>
-
-                        <li>
-                                <span class="skill-pill">
-                                    <a href="#" class="endorse-count">99+</a>
-                                    <span class="endorse-item-name">Leadership</span>
-                                </span>
-
-                            <div class="endorsers-container">
-                                <ul class="endorsers-pics">
-                                    <li></li>
-                                </ul>
-                            </div>
-                        </li>
-
-                        <li>
-                                <span class="skill-pill">
-                                    <a href="#" class="endorse-count">90+</a>
-                                    <span class="endorse-item-name">Strategy</span>
-                                </span>
-
-                            <div class="endorsers-container">
-                                <ul class="endorsers-pics">
-                                    <li></li>
-                                </ul>
-                            </div>
-                        </li>
-
-                        <li>
-                                <span class="skill-pill">
-                                    <a href="#" class="endorse-count">87+</a>
-                                    <span class="endorse-item-name">Product Marketing</span>
-                                </span>
-
-                            <div class="endorsers-container">
-                                <ul class="endorsers-pics">
-                                    <li></li>
-                                </ul>
-                            </div>
-                        </li>
-
-                        <li>
-                                <span class="skill-pill">
-                                    <a href="#" class="endorse-count">69+</a>
-                                    <span class="endorse-item-name">Product Development</span>
-                                </span>
+                        <li ng-repeat="skill in background.skill | limitTo:7 | orderBy:'endorseCount':true">
+                            <span class="skill-pill">
+                                <span class="endorse-count">{{skill.endorseCount}}</span>
+                                <span class="endorse-item-name">{{skill.name}}</span>
+                            </span>
 
                             <div class="endorsers-container">
                                 <ul class="endorsers-pics">
@@ -310,39 +195,11 @@
 
                     <h5>Jeff also knows about...</h5>
                     <ul class="skills-section more-skill">
-                        <li>
-                                 <span class="skill-pill">
-                                    <a href="#" class="endorse-count">65</a>
-                                    <span class="endorse-item-name">Social Media</span>
-                                </span>
-                        </li>
-
-                        <li>
-                                 <span class="skill-pill">
-                                    <a href="#" class="endorse-count">49</a>
-                                    <span class="endorse-item-name">User Experience</span>
-                                </span>
-                        </li>
-
-                        <li>
-                                 <span class="skill-pill">
-                                    <a href="#" class="endorse-count">9</a>
-                                    <span class="endorse-item-name">Motivation</span>
-                                </span>
-                        </li>
-
-                        <li>
-                                 <span class="skill-pill">
-                                    <a href="#" class="endorse-count">6</a>
-                                    <span class="endorse-item-name">Mobile Applications</span>
-                                </span>
-                        </li>
-
-                        <li>
-                                 <span class="skill-pill">
-                                    <a href="#" class="endorse-count">10</a>
-                                    <span class="endorse-item-name">Business Operations</span>
-                                </span>
+                        <li ng-repeat="skill in background.skill | limitTo:background.skill.length : 7">
+                             <span class="skill-pill">
+                                <a href="#" class="endorse-count">{{skill.endorseCount}}</a>
+                                <span class="endorse-item-name">{{skill.name}}</span>
+                            </span>
                         </li>
                     </ul>
                 </div>
@@ -354,18 +211,18 @@
                 </div>
 
                 <div class="education-container">
-                    <div class="education-first">
+                    <div ng-repeat="edu in background.education"  class="education-first">
                         <div class="header-left">
-                            <h4>University of Pennsylvania - The Wharton School</h4>
+                            <h4>{{edu.school}}</h4>
                             <h5>
-                                <span class="degree">Bachelor of Science, </span>
-                                <span class="major">Economics</span>
+                                <span class="degree">{{edu.degree}}</span>
+                                <span class="major">{{edu.major}}</span>
                             </h5>
-                            <span class="education-date">1988 – June 1992</span>
+                            <span class="education-date">{{edu.date}}</span>
                         </div>
 
-                        <div class="header-right">
-                            <img class="education-logo" src="images/education.png">
+                        <div ng-if="edu.logo" class="header-right">
+                            <img class="education-logo" src="{{edu.logo}}">
                         </div>
                     </div>
                 </div>
@@ -383,9 +240,9 @@
 -->
 <script src="bower_components/angular/angular.js"></script>
 <script src="bower_components/angular-route/angular-route.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.0-beta.2/angular-sanitize.js"></script>
 <script src="app.js"></script>
-<script src="view1/view1.js"></script>
-<script src="view2/view2.js"></script>
+<script src="controllers.js"></script>
 <script src="components/version/version.js"></script>
 <script src="components/version/version-directive.js"></script>
 <script src="components/version/interpolate-filter.js"></script>
