@@ -1,6 +1,7 @@
 {
   "avatar": "images/avatar.jpg",
-  "name": "Jeff Weiner",
+  "firstName": "Jeff",
+  "lastName": "Weiner",
   "headline": "CEO at LinkedIn",
   "location": "San Francisco Bay Area",
   "industry": "Internet",

@@ -8,7 +8,9 @@ linkedinControllers.controller('ProfileCardCtrl', function ($scope, $http) {
         $scope.profileCard = data;
     });
 
-    
+    $http.get('data/background.json').success(function (data) {
+        $scope.background = data;
+    });
 });
 
 linkedinControllers.controller('BackgroundCtrl', function ($scope, $http) {

@@ -33,11 +33,13 @@
                         <div class="account-icon"></div>
 
                         <div class="basic-info">
-                            <h1>{{profileCard.name}}</h1>
-                            <p class="headline-title">{{profileCard.headline}}</p>
+                            <h1>{{profileCard.firstName + ' ' + profileCard.lastName}}</h1>
+                            <p class="headline-title">
+                                {{background.experience[0].title + ' at ' + background.experience[0].company}}
+                            </p>
                             <div class="location-container">
-                                <span class="location">{{profileCard.location}}</span> |
-                                <span class="industry">{{profileCard.industry}}</span>
+                                <a href="#" class="location">{{profileCard.location}}</a> |
+                                <a href="#" class="industry">{{profileCard.industry}}</a>
                             </div>
                         </div>
                     </div>
@@ -48,7 +50,9 @@
                             <td class="overview-time">Current</td>
                             <td>
                                 <ul>
-                                    <li ng-repeat="curr in profileCard.current">{{curr}}{{$last ? ' ' : ', '}}</li>
+                                    <li ng-repeat="exp in background.experience | limitTo:3">
+                                        <a href="#">{{exp.company}}{{$last ? ' ' : ', '}}</a>
+                                    </li>
                                 </ul>
                             </td>
                         </tr>
@@ -57,7 +61,9 @@
                             <td class="overview-time">Previous</td>
                             <td>
                                 <ul>
-                                    <li  ng-repeat="prev in profileCard.previous">{{prev}}{{$last ? ' ' : ', '}}</li>
+                                    <li  ng-repeat="exp in background.experience | limitTo:3:3">
+                                        <a href="#">{{exp.company}}{{$last ? ' ' : ', '}}</a>
+                                    </li>
                                 </ul>
                             </td>
                         </tr>
@@ -66,7 +72,9 @@
                             <td class="overview-time">Education</td>
                             <td>
                                 <ul>
-                                    <li ng-repeat="school in profileCard.education">{{school}}{{$last ? ' ' : ', '}}</li>
+                                    <li>
+                                        <a href="#">{{background.education[0].school}}</a>
+                                    </li>
                                 </ul>
                             </td>
                         </tr>
@@ -84,7 +92,7 @@
                         </div>
 
                         <div class="connect-action">
-                            <p>Know Jeff?</p>
+                            <p>Know {{profileCard.firstName}}?</p>
                             <a href="#">Connect</a>
                         </div>
                     </div>
@@ -94,6 +102,20 @@
                 </div>
             </div>
         </div>
+        <div id="contact-info-container" class="contact-info-more">
+            <table>
+                <tbody>
+                    <tr class="twitter">
+                        <th>Twitter</th>
+                        <td><a href="jeffweiner">jeffweiner</a></td>
+                    </tr>
+                    <tr class="website">
+                        <th>Website</th>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
         <div class="profile-card-extra">
             <div class="public-profile">
                 <a class="view-public-profile" href="https://www.linkedin.com/in/{{profileCard.publicProfile}}">
@@ -101,7 +123,7 @@
                 </a>
             </div>
             <div class="contact-info">
-                <span class="contact">Contact Info</span>
+                <a id="show-info" href="#" class="contact">Contact Info</a>
             </div>
         </div>
     </div>
@@ -127,21 +149,21 @@
                     <div ng-repeat="exp in background.experience" class="experience">
                         <div class="experience-header">
                             <div class="header-left">
-                                <h4>{{exp.title}}</h4>
-                                <h5>{{exp.company}}</h5>
+                                <h4><a href="#">{{exp.title}}</a></h4>
+                                <h5><a href="#">{{exp.company}}</a></h5>
 
                                 <div class="experience-date-location">
                                     <span class="experience-date">
                                         {{exp.date}}
                                     </span>
-                                    <span class="experience-location">
-                                        {{exp.location}}
+                                    <span ng-if="exp.location" class="experience-location">
+                                       | {{exp.location}}
                                     </span>
                                 </div>
                             </div>
                             <div class="header-right">
                                 <h5 ng-if="exp.logo" class="experience-logo">
-                                    <img src="{{exp.logo}}">
+                                    <a href="#"><img src="{{exp.logo}}"></a>
                                 </h5>
                             </div>
                         </div>
@@ -179,7 +201,7 @@
                 <div class="skills-item">
                     <h5>Top Skills</h5>
                     <ul class="skills-section">
-                        <li ng-repeat="skill in background.skill | limitTo:7 | orderBy:'endorseCount':true">
+                        <li ng-repeat="skill in background.skill | orderBy:'endorseCount':true | limitTo:10 ">
                             <span class="skill-pill">
                                 <span class="endorse-count">{{skill.endorseCount}}</span>
                                 <span class="endorse-item-name">{{skill.name}}</span>
@@ -195,7 +217,7 @@
 
                     <h5>Jeff also knows about...</h5>
                     <ul class="skills-section more-skill">
-                        <li ng-repeat="skill in background.skill | limitTo:background.skill.length : 7">
+                        <li ng-repeat="skill in background.skill | orderBy:'endorseCount':true | limitTo:background.skill.length : 10">
                              <span class="skill-pill">
                                 <a href="#" class="endorse-count">{{skill.endorseCount}}</a>
                                 <span class="endorse-item-name">{{skill.name}}</span>
@@ -213,27 +235,22 @@
                 <div class="education-container">
                     <div ng-repeat="edu in background.education"  class="education-first">
                         <div class="header-left">
-                            <h4>{{edu.school}}</h4>
+                            <h4><a href="#">{{edu.school}}</a></h4>
                             <h5>
                                 <span class="degree">{{edu.degree}}</span>
-                                <span class="major">{{edu.major}}</span>
+                                <a href="#" class="major">{{edu.major}}</a>
                             </h5>
                             <span class="education-date">{{edu.date}}</span>
                         </div>
 
                         <div ng-if="edu.logo" class="header-right">
-                            <img class="education-logo" src="{{edu.logo}}">
+                            <a href="#"><img class="education-logo" src="{{edu.logo}}"></a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
-    <div id="side-bar">
-
-    </div>
-
 </div>
 <!-- In production use:
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
@@ -242,6 +259,7 @@
 <script src="bower_components/angular-route/angular-route.js"></script>
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.0-beta.2/angular-sanitize.js"></script>
 <script src="app.js"></script>
+<script src="js.js"></script>
 <script src="controllers.js"></script>
 <script src="components/version/version.js"></script>
 <script src="components/version/version-directive.js"></script>

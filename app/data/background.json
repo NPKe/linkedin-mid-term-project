@@ -23,8 +23,16 @@
       "company": "Warner Bros.",
       "date": "September 1994 – March 2000 (5 years 7 months)",
       "location": "",
-      "logo": "images/world-bank.png",
+      "logo": "",
       "description": "<p>Helped oversee Warner Bros.' online efforts, including Warner Bros. Online and Entertaindom (one of the web's first original entertainment destination sites). </p><br><p>In December, 1994, began developing the initial business plan for Warner Bros. Online while an analyst in Corporate Planning & Development.</p>"
+    },
+    {
+      "title": "Member, Advisory Board",
+      "company": "Boys & Girls Clubs of the Peninsula",
+      "date": "2011 – Present (5 years)",
+      "location": "San Francisco Bay Area",
+      "logo": "images/world-bank.png",
+      "description": "<p>BGCP’s mission is to help its members develop the academic and life skills they need to complete high school ready for college and career.</p><br><p>BGCP serves youth in grades K–12 at nine locations: three clubhouses and six school sites in East Palo Alto, Menlo Park, and Redwood City, where over half the youth drop out of high school. While most youth development organizations select the young people whom they serve, BGCP serves all youth. The organization has grown rapidly over the past five years and now serves 2,000 active members at its nine sites.</p>"
     },
     {
       "title": "Senior Analyst",
@@ -51,12 +59,20 @@
     {"name": "User Experience", "endorseCount": 49},
     {"name": "Motivation", "endorseCount": 9},
     {"name": "Mobile Applications", "endorseCount": 6},
-    {"name": "Business Operations", "endorseCount": 5}
+    {"name": "Business Operations", "endorseCount": 5},
+    {"name": "Entrepreneurship", "endorseCount": 95},
+    {"name": "Strategic Planning", "endorseCount": 85},
+    {"name": "LinkedIn", "endorseCount": 75},
+    {"name": "Nonprofits", "endorseCount": 9},
+    {"name": "Mentoring", "endorseCount": 15},
+    {"name": "Mergers & Acquisitions", "endorseCount": 25},
+    {"name": "Leadership Development", "endorseCount": 65},
+    {"name": "Corporate Development", "endorseCount": 5}
   ],
 
   "education": [
     {
-      "school": "University of Pennsylvania - The Wharton School", "degree": "Bachelor of Science,",
+      "school": "University of Pennsylvania - The Wharton School - VNU-HCM", "degree": "Bachelor of Science,",
       "major": "Economics", "date": "1988 – June 1992", "logo": "images/education.png"
     }
   ]

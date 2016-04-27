@@ -83,6 +83,11 @@ a {
   text-decoration: none;
 }
 
+a:hover 
+{
+    color: #006fa6;
+}
+
 #cover-photo {
   height: 404px;
   min-width: 974px;
@@ -124,6 +129,14 @@ a {
   overflow: hidden;
 }
 
+.profile-card a, .profile-card-extra a {
+  color: #333;
+}
+
+.profile-card a:hover, .profile-card-extra a:hover {
+  color: #006fa6;
+}
+
 h1 {
   font-size: 22px;
   font-weight: bold;
@@ -142,7 +155,6 @@ h1 {
 }
 
 .location {
-  color: #006fa6;
 }
 
 .location-container {
@@ -225,6 +237,16 @@ tbody {
   background-image: linear-gradient(top, #287bbc 0%,#23639a 100%);
 }
 
+.follow-btn:hover, drop-caret:hover
+{
+    background-color: #2672ae;
+    filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF2672AE', endColorstr='#FF1E4F7E');
+    background-image: -webkit-linear-gradient(top, #2672ae 0%,#1e4f7e 100%);
+    background-image: -moz-linear-gradient(top, #2672ae 0%,#1e4f7e 100%);
+    background-image: -o-linear-gradient(top, #2672ae 0%,#1e4f7e 100%);
+    background-image: linear-gradient(top, #2672ae 0%,#1e4f7e 100%);
+}
+
 .profile-aux {
   padding-top: 5px;
   overflow: hidden;
@@ -240,6 +262,11 @@ tbody {
   font-size: 12px;
   line-height: 14px;
   padding-top: 3px;
+}
+
+.connect-action a:hover
+{
+    text-decoration: underline;
 }
 
 .follower-count {
@@ -301,7 +328,6 @@ strong {
 #background {
   margin-top: 10px;
   background: #fff;
-  width: 646px;
   float: left;
   border: 1px solid #B1B1B1;
 
@@ -436,7 +462,7 @@ h5 {
   font-weight: bold;
   color: #fff;
   background: #1ba8e5;
-  padding: 6px 3px;
+  padding: 6px 7px;
   border-top-left-radius: 4px;
   border-bottom-left-radius: 4px;
   min-width: 50px;
@@ -629,4 +655,51 @@ h5 {
 
 .skills-item ul {
     overflow: hidden;
+}
+
+h4 a {
+   color: #000; 
+}
+
+h5 a {
+   color: #434649; 
+}
+
+.contact-info-more {
+    padding: 18px 20px;
+    display: block;
+    background: url(images/bg_profile_fabric.png);
+    border: 1px solid #B1B1B1;
+    border-bottom: none;
+    font-size: 13px;
+    line-height: 17px;
+    color: #66696a;
+}
+
+.twitter th:before{
+    background: url('images/sprite_profile_top_card_v8.png') no-repeat 0 -348px;
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 13px;
+}
+
+.website th:before {
+    background: url('images/sprite_profile_top_card_v8.png') no-repeat 0 -398px;
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 13px;
+}
+
+.twitter, .website {
+    text-align: left;
+}
+
+.twitter th, .website th {
+    min-width: 80px;
+}
+
+.twitter a, .website a {
+    color: #0073b2;
 }
