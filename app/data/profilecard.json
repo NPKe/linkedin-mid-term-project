@@ -1,14 +1,12 @@
 {
   "avatar": "images/avatar.jpg",
-  "firstName": "Jeff",
-  "lastName": "Weiner",
-  "headline": "CEO at LinkedIn",
-  "location": "San Francisco Bay Area",
-  "industry": "Internet",
-  "current": ["LinkedIn", "Intuit", "DonorsChoose"],
-  "previous": ["Malaria No More", "Accel Partners", "Greylock"],
-  "education": ["University of Pennsylvania - The Wharton School"],
-  "followers": 4039059,
-  "publicProfile": "jeffweiner08"
+  "firstName": "Ke",
+  "lastName": "Nguyen Phu",
+  "location": "Vietnam",
+  "industry": "Software",
+  "twitter": "kenpstr",
+  "website": "https://kenp.io",
+  "followers": 1011011,
+  "publicProfile": "ke-nguyen-phu-4b5332108"
 }
 

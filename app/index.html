@@ -6,7 +6,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Jeff Weiner | Linkedin</title>
+    <title>Ke Nguyen Phu | Linkedin</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
@@ -107,11 +107,11 @@
                 <tbody>
                     <tr class="twitter">
                         <th>Twitter</th>
-                        <td><a href="jeffweiner">jeffweiner</a></td>
+                        <td><a href="#">{{profileCard.twitter}}</a></td>
                     </tr>
                     <tr class="website">
                         <th>Website</th>
-                        <td></td>
+                        <td><a href="#">{{profileCard.website}}</a></td>
                     </tr>
                 </tbody>
             </table>
@@ -171,6 +171,33 @@
                         </div>
                     </div>
                 </div>
+            </div>
+            
+            <div id="background-project-container" class="background-section">
+                <div class="project-header">
+                    <h3>Projects</h3>
+                </div>
+                
+                <div class="project-container">
+                    <div ng-repeat="project in background.projects" class="project-view">
+                        <h4>{{project.name}}</h4>
+                        <h5>{{project.date}}</h5>
+                        <p>{{project.description}}</p>
+                        <div class="project-team">
+                            <span>{{project.members.length}} team members, including:</span>
+                            <ul class="team-list">
+                                <li ng-repeat="mem in project.members" class="project-member">
+                                    <a href="#"><img src="{{mem.avatar}}"></a>
+                                    <div class="member-info">
+                                        <h5><a href="">{{mem.name}}</a></h5>
+                                        <h6>{{mem.headline}}</h6>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
             </div>
 
             <div id="background-volunteering-container" class="background-section">
@@ -257,7 +284,8 @@
 -->
 <script src="bower_components/angular/angular.js"></script>
 <script src="bower_components/angular-route/angular-route.js"></script>
-<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.0-beta.2/angular-sanitize.js"></script>
+<script src="bower_components/jquery/jquery.min.js"></script>
+<script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
 <script src="app.js"></script>
 <script src="js.js"></script>
 <script src="controllers.js"></script>

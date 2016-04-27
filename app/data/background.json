@@ -3,12 +3,12 @@
 
   "experience": [
     {
-      "title": "CEO",
-      "company": "LinkedIn",
-      "date": "December 2008 – Present (7 years 5 months)",
+      "title": "Executive Chairman",
+      "company": "The Jack Welch Management Institute",
+      "date": "December 2014 – Present (2 years 5 months)",
       "location": "",
       "logo": "images/linkedin.png",
-      "description": "<p>Connecting the world's professionals to make them more productive and successful. Since joining the company in December 2008, LinkedIn has expanded its global platform to 23 languages and more than 30 offices around the world, grown its membership base from 33M to more than 347M, and increased its revenue from $78M to over $2.2B in 2014.</p>"
+      "description": "<p>The Jack Welch Management Institute at Strayer University provides students and organizations with the proven methodologies, immediately actionable practices, and respected credentials needed to win in the most demanding global business environments. By teaching the performance and people-driven management canon of Jack Welch and other renowned business leaders, the Jack Welch Management Institute prepares Executive MBA and Executive Certificate program graduates to transform their companies and careers.</p>"
     },
     {
       "title": "Member, Board of Directors",
@@ -44,36 +44,122 @@
     }
   ],
 
+  "projects": [
+    {
+      "name": "BBDO Migration",
+      "date": "November 2014 – March 2015",
+      "description": "This project is to migration current system on Sharepoint 2007, 2010 to Sharepoint 2013.",
+      "members": [
+        {
+          "name": "Ke Nguyen Phu",
+          "headline": "Executive Chairman at The Jack Welch Management Institute",
+          "avatar": "images/team-member-01.jpg"
+        },
+        {
+          "name": "Nguyen Anh Linh",
+          "headline": "",
+          "avatar": "images/ghost_person.png"
+        },
+        {
+          "name": "Pham Thi Ly",
+          "headline": "",
+          "avatar": "images/ghost_person.png"
+        },
+        {
+          "name": "Nguyen Hoang Giang",
+          "headline": "",
+          "avatar": "images/ghost_person.png"
+        },
+        {
+          "name": "Hung Cao",
+          "headline": "",
+          "avatar": "images/ghost_person.png"
+        }
+      ]
+    },
+
+    {
+      "name": "Tripwire",
+      "date": "October 2005 – April 2007",
+      "description": "This project is to design and develop marketing management system using SharePoint for a German companies to provide a complete solution for marketing for many customers like Vodafone, Lufthansa, Monster, … ",
+      "members": [
+        {
+          "name": "Ke Nguyen Phu",
+          "headline": "Executive Chairman at The Jack Welch Management Institute",
+          "avatar": "images/team-member-01.jpg"
+        },
+        {
+          "name": "Luong Thi thu Hang",
+          "headline": "",
+          "avatar": "images/ghost_person.png"
+        },
+        {
+          "name": "Cao Le Thi khanh ngoc",
+          "headline": "",
+          "avatar": "images/ghost_person.png"
+        },
+        {
+          "name": "Hoang Quynh Trang",
+          "headline": "",
+          "avatar": "images/ghost_person.png"
+        }
+      ]
+    },
+
+    {
+      "name": "ORT",
+      "date": "January 2014 – September 2014",
+      "description": "",
+      "members": [
+        {
+          "name": "Ke Nguyen Phu",
+          "headline": "Executive Chairman at The Jack Welch Management Institute",
+          "avatar": "images/team-member-01.jpg"
+        },
+        {
+          "name": "Hung Cao",
+          "headline": "SDE2 - Contractor at Microsoft",
+          "avatar": "images/team-member-02.jpg"
+        }
+      ]
+    }
+  ],
+
   "volunteering": {
-    "opportunities": ["Skills-based volunteering (pro bono consulting)"],
-    "interests": ["Education", "Poverty Alleviation", "Social Services"]
+    "opportunities": ["Skills-based volunteering (pro bono consulting)", "Joining a nonprofit board"],
+    "interests": ["Education", "Poverty Alleviation", "Social Services", "Children", "Environment", "Science and Technology"]
   },
 
   "skill": [
-    {"name": "Business Strategy", "endorseCount": 99},
-    {"name": "Leadership", "endorseCount": 99},
-    {"name": "Strategy", "endorseCount": 90},
-    {"name": "Product Marketing", "endorseCount": 87},
-    {"name": "Product Development", "endorseCount": 69},
-    {"name": "Social Media", "endorseCount": 65},
-    {"name": "User Experience", "endorseCount": 49},
-    {"name": "Motivation", "endorseCount": 9},
-    {"name": "Mobile Applications", "endorseCount": 6},
-    {"name": "Business Operations", "endorseCount": 5},
-    {"name": "Entrepreneurship", "endorseCount": 95},
-    {"name": "Strategic Planning", "endorseCount": 85},
-    {"name": "LinkedIn", "endorseCount": 75},
+    {"name": "Web Development", "endorseCount": 99},
+    {"name": "Mobile Applications", "endorseCount": 99},
+    {"name": "MEAN Stack", "endorseCount": 90},
+    {"name": "C/C++", "endorseCount": 95},
+    {"name": "C#", "endorseCount": 86},
+    {"name": "Java", "endorseCount": 72},
+    {"name": "JavaScript", "endorseCount": 85},
+    {"name": "HTML/CSS", "endorseCount": 95},
+    {"name": "SQL", "endorseCount": 78},
+    {"name": "Bootstrap", "endorseCount": 5},
+    {"name": "OOP", "endorseCount": 65},
+    {"name": "Data structure & Algorithms", "endorseCount": 49},
+    {"name": "Visual Studio", "endorseCount": 9},
+    {"name": "Microsoft SQL Server", "endorseCount": 6},
+    {"name": "MySQL", "endorseCount": 5},
+    {"name": "MongoDB", "endorseCount": 95},
+    {"name": "NodeJS", "endorseCount": 85},
+    {"name": "UML", "endorseCount": 75},
     {"name": "Nonprofits", "endorseCount": 9},
     {"name": "Mentoring", "endorseCount": 15},
     {"name": "Mergers & Acquisitions", "endorseCount": 25},
-    {"name": "Leadership Development", "endorseCount": 65},
+    {"name": "Angular", "endorseCount": 65},
     {"name": "Corporate Development", "endorseCount": 5}
   ],
 
   "education": [
     {
-      "school": "University of Pennsylvania - The Wharton School - VNU-HCM", "degree": "Bachelor of Science,",
-      "major": "Economics", "date": "1988 – June 1992", "logo": "images/education.png"
+      "school": "VNUHCM - University of Science", "degree": "Bachelor,",
+      "major": "Sofware Engineering", "date": "August 2013 – 2017", "logo": "images/education.png"
     }
   ]
 }

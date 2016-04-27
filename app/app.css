@@ -595,6 +595,19 @@ h5 {
   float: left;
 }
 
+.project-header h3:before {
+    font-family: "LinkedIn-Glyphs-2.0.7","LinkedIn-Glyphs";
+    font-weight: normal;
+    font-style: normal;
+    text-decoration: inherit;
+    speak: none;
+    font-size: 32px;
+    color: inherit;
+    content: "\e03e";
+    padding-right: 17px;
+    float: left;
+}
+
 .contact:before {
   font-family: "LinkedIn-Glyphs-2.0.7","LinkedIn-Glyphs";
   font-weight: normal;
@@ -667,10 +680,10 @@ h5 a {
 
 .contact-info-more {
     padding: 18px 20px;
-    display: block;
+    display: none;
     background: url(images/bg_profile_fabric.png);
-    border: 1px solid #B1B1B1;
-    border-bottom: none;
+    border-left: 1px solid #B1B1B1;
+    border-right: 1px solid #B1B1B1;
     font-size: 13px;
     line-height: 17px;
     color: #66696a;
@@ -702,4 +715,74 @@ h5 a {
 
 .twitter a, .website a {
     color: #0073b2;
+}
+
+.project-member img {
+    height: 38px;
+    width: 38px;
+    margin-right: 10px;
+    margin-bottom: 4px;
+}
+
+.project-member {
+    overflow: hidden;
+    width: 277px;
+    float: left;
+    padding-right: 10px;
+}
+
+.project-member>a {
+    float: left;
+}
+
+.project-view p{
+    margin: 10px 0px;
+}
+
+.project-team span:before {
+    width: 0;
+    border-style: dashed;
+    border-color: transparent;
+    border-width: 4px 0 4px 4px;
+    border-left-color: #535353;
+    border-left-style: solid;
+    display: -moz-inline-stack;
+    display: inline-block;
+    margin-right: 7px;
+    content: '';
+}
+
+.team-list {
+    margin-top: 10px;
+    overflow: hidden;
+}
+
+.project-team {
+    margin-left: 10px;
+}
+
+.member-info h5 a{
+    font-size: 13px;
+    font-weight: bold;
+    color: #006fa6;
+}
+
+.member-info h5 a:hover{
+    text-decoration: underline;
+}
+
+.member-info h6 {
+    font-size: 12px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.project-view {
+    margin-bottom: 30px;
+}
+
+.project-view:last-child
+{
+    margin-bottom: 0px;
 }
