@@ -143,6 +143,12 @@ h1 {
   line-height: 24px;
   color: #000;
   margin: 0px;
+  display: inline;
+}
+
+h1:hover > .edit-field-icon::before
+{
+    display: inline-block;
 }
 
 .headline-title {
@@ -209,6 +215,11 @@ tbody {
 
 .profile-overview-content {
   padding-bottom: 5px;
+}
+
+.profile-overview:hover .edit-field-icon::before
+{
+    display: inline-block;
 }
 
 .account-icon {
@@ -343,7 +354,7 @@ h2 {
 }
 
 .background-content {
-  padding: 0px 20px 20px 20px;
+  padding: 0px 25px 20px 20px;
 }
 
 .background-content h3 {
@@ -664,6 +675,7 @@ h5 {
 
 .experience-summary {
     padding-top: 10px;
+    position: relative;
 }
 
 .skills-item ul {
@@ -785,4 +797,71 @@ h5 a {
 .project-view:last-child
 {
     margin-bottom: 0px;
+}
+
+.edit-field-icon::before {
+    font-family: "LinkedIn-Glyphs-2.0.7","LinkedIn-Glyphs";
+    font-weight: normal;
+    font-style: normal;
+    text-decoration: inherit;
+    speak: none;
+    color: inherit;
+    content: "\e018";
+    font-size: 100%;
+    display: inline-block;
+}
+
+.edit-field-icon:hover .edit-field-icon::before {
+    display: inline-block;
+}
+
+.edit-field-icon
+{
+}
+
+.edit-summary {
+    position: absolute;
+    top: 0px;
+    left: 100%;
+}
+
+.summary-content {
+    position: relative;
+}
+
+.add-item {
+    color: #666;
+    background: #f2f2f2;
+    border: none;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 24px;
+    padding: 1px 10px;
+    border-color: #a7a7a7;
+    float: right;
+    position: relative;
+    top: -5px;
+}
+
+.add-item:hover {
+    color: #fff;
+    background: #00a0dc;
+    border: none;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 24px;
+    padding: 1px 10px;
+}
+
+.add-item::before
+{
+    font-family: "LinkedIn-Glyphs-2.0.7","LinkedIn-Glyphs";
+    font-weight: normal;
+    font-style: normal;
+    text-decoration: inherit;
+    speak: none;
+    font-size: 16px;
+    color: inherit;
+    content: "\e00c";
+    vertical-align: top;
 }

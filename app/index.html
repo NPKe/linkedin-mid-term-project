@@ -33,13 +33,16 @@
                         <div class="account-icon"></div>
 
                         <div class="basic-info">
-                            <h1>{{profileCard.firstName + ' ' + profileCard.lastName}}</h1>
+                            <h1>{{profileCard.firstName + ' ' + profileCard.lastName}} <i class="edit-field-icon"></i></h1>
+                            
                             <p class="headline-title">
                                 {{background.experience[0].title + ' at ' + background.experience[0].company}}
+                                <i class="edit-field-icon"></i>
                             </p>
                             <div class="location-container">
                                 <a href="#" class="location">{{profileCard.location}}</a> |
                                 <a href="#" class="industry">{{profileCard.industry}}</a>
+                                <i class="edit-field-icon"></i>
                             </div>
                         </div>
                     </div>
@@ -53,6 +56,7 @@
                                     <li ng-repeat="exp in background.experience | limitTo:3">
                                         <a href="#">{{exp.company}}{{$last ? ' ' : ', '}}</a>
                                     </li>
+                                    <i class="edit-field-icon"></i>
                                 </ul>
                             </td>
                         </tr>
@@ -64,6 +68,7 @@
                                     <li  ng-repeat="exp in background.experience | limitTo:3:3">
                                         <a href="#">{{exp.company}}{{$last ? ' ' : ', '}}</a>
                                     </li>
+                                    <i class="edit-field-icon"></i>
                                 </ul>
                             </td>
                         </tr>
@@ -75,6 +80,7 @@
                                     <li>
                                         <a href="#">{{background.education[0].school}}</a>
                                     </li>
+                                    <i class="edit-field-icon"></i>
                                 </ul>
                             </td>
                         </tr>
@@ -135,8 +141,9 @@
                 <div class="summary-header">
                     <h3>Summary</h3>
                 </div>
-                <div ng-bind-html="background.summary" class="summary-content">
-
+                <div class="summary-content">
+                    <p ng-bind-html="background.summary"></p>
+                    <i class="edit-field-icon edit-summary"></i>
                 </div>
             </div>
 
