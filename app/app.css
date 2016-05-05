@@ -149,6 +149,7 @@ h1 {
 h1:hover > .edit-field-icon::before
 {
     display: inline-block;
+    vertical-align: top;
 }
 
 .headline-title {
@@ -552,6 +553,7 @@ h5 {
 
 .education-first {
   overflow: hidden;
+    padding-bottom: 25px;
 }
 
 .education-logo {
@@ -834,16 +836,35 @@ h5 a {
     speak: none;
     color: inherit;
     content: "\e018";
-    font-size: 100%;
+    font-size: 90%;
     display: none;
+    line-height: 16px;
+}
+
+.edit-field-icon::before:hover {
+    color: #fff!important;
+    background: #00A0DC!important;
 }
 
 .edit-field-icon:hover .edit-field-icon::before {
     display: inline-block;
+    line-height: 16px;
+    color: #fff!important;
+    background: #00A0DC!important;
+}
+
+.edit-field-icon:hover
+{
+    color: #fff!important;
+    background: #00A0DC!important;
+    width: 10px;
+    height: 10px;
+    padding: 0px 2px;
 }
 
 .edit-field-icon
 {
+    line-height: 16px;
 }
 
 .edit-paragraph {
@@ -970,6 +991,11 @@ form input[type="text"], select {
     margin-right: 5px;
 }
 
+form input[type="checkbox"] {
+    padding-top: 7px;
+    margin-top: 7px;
+}
+
 .action {
     padding-top: 10px;
 }
@@ -1057,4 +1083,16 @@ textarea {
 .add-project-container {
     padding-bottom: 25px;
     display: none;
+}
+
+.edit-section {
+    display: none;
+}
+
+.education-description {
+    margin: 0px 0px 10px;
+}
+
+.activities-societies {
+    margin-bottom: 10px;
 }
