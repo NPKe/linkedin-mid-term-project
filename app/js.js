@@ -70,9 +70,7 @@ $(document).ready(function(){
         $(".add-skill-container").hide();
     });
     
-    $("#btn-add-project").click(function(){
-        $(".add-project-container").show();
-    });
+    
     
     $("#btn-cancel-add-project").click(function(){
         $(".add-project-container").hide();
@@ -108,5 +106,26 @@ $(document).ready(function(){
         $(".add-education-container input").val('');
         $(".add-education-container textarea").val('');
         $(".add-education-container select").val('');
+    });
+
+    $(document).on("click", ".edit-exp", function(){
+        $(".add-position-container").show();
+        $('html,body').animate({
+                scrollTop: $("#background-experience-container").offset().top+90},
+            'fast');
+    });
+
+    $(document).on("click", ".btn-remove", function(){
+        $(".add-position-container").hide();
+    });
+
+
+    
+    $("#btn-add-project").click(function(){
+        $(".add-project-container").show();
+        $('html,body').animate({
+                scrollTop: $(".add-position-container").offset().top},
+            'fast');
+
     });
 });

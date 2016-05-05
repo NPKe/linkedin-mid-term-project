@@ -250,7 +250,7 @@ tbody {
   background-image: linear-gradient(top, #287bbc 0%,#23639a 100%);
 }
 
- .btn-primary {
+ .btn-primary, .btn-remove {
   border: solid 1px #1b5480;
   background: #287bbc;
   color: #fff;

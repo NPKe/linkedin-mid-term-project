@@ -1,46 +1,71 @@
 {
-  "summary": "<p>Internet executive with over 20 years of experience, including general management of mid to large size organizations, corporate development, product development, business operations, and strategy.Currently CEO at LinkedIn, the web's largest and most powerful network of professionals.</p><br /><p>Prior to LinkedIn, was an Executive in Residence at Accel Partners and Greylock Partners. Primarily focused on advising the leadership teams of the firm's existing consumer technology portfolio companies while also working closely with the firm’s partners to evaluate new investment opportunities.</p><br /><p>Previously served in key leadership roles at Yahoo! for over seven years, most recently as the Executive Vice President of Yahoo!'s Network Division managing Yahoo's consumer web product portfolio, including Yahoo's Front Page, Mail, Search, and Media products.</p><br /><p>Specialties: general management, corporate development, product development, business operations, strategy, product marketing, non-profit governance</p>",
+  "summary": "Internet executive with over 20 years of experience, including general management of mid to large size organizations, corporate development, product development, business operations, and strategy.Currently CEO at LinkedIn, the web's largest and most powerful network of professionals.<br /><br />Prior to LinkedIn, was an Executive in Residence at Accel Partners and Greylock Partners. Primarily focused on advising the leadership teams of the firm's existing consumer technology portfolio companies while also working closely with the firm’s partners to evaluate new investment opportunities.<br /><br />Previously served in key leadership roles at Yahoo! for over seven years, most recently as the Executive Vice President of Yahoo!'s Network Division managing Yahoo's consumer web product portfolio, including Yahoo's Front Page, Mail, Search, and Media products.<br /><br />Specialties: general management, corporate development, product development, business operations, strategy, product marketing, non-profit governance",
 
   "experience": [
     {
       "title": "Executive Chairman",
       "company": "The Jack Welch Management Institute",
       "date": "December 2014 – Present (2 years 5 months)",
+      "monthStart": "10",
+      "yearStart": "2014",
+      "currentWork": true,
+      "monthFinish": "",
+      "yearFinish": "",
       "location": "",
       "logo": "images/linkedin.png",
-      "description": "<p>The Jack Welch Management Institute at Strayer University provides students and organizations with the proven methodologies, immediately actionable practices, and respected credentials needed to win in the most demanding global business environments. By teaching the performance and people-driven management canon of Jack Welch and other renowned business leaders, the Jack Welch Management Institute prepares Executive MBA and Executive Certificate program graduates to transform their companies and careers.</p>"
+      "description": "The Jack Welch Management Institute at Strayer University provides students and organizations with the proven methodologies, immediately actionable practices, and respected credentials needed to win in the most demanding global business environments. By teaching the performance and people-driven management canon of Jack Welch and other renowned business leaders, the Jack Welch Management Institute prepares Executive MBA and Executive Certificate program graduates to transform their companies and careers."
     },
     {
       "title": "Member, Board of Directors",
       "company": "Intuit",
       "date": "April 2012 – Present (4 years 1 month)",
+      "monthStart": "4",
+      "yearStart": "2012",
+      "currentWork": true,
+      "monthFinish": "",
+      "yearFinish": "",
       "location": "Mountain View, CA",
       "logo": "images/experience-logo.png",
-      "description": "<p>With revenue of $4B+ and approximately 8,000 employees, Intuit is a leading provider of innovative business and financial management solutions for small and medium-sized businesses, consumers, accounting professionals and financial institutions.</p>"
+      "description": "With revenue of $4B+ and approximately 8,000 employees, Intuit is a leading provider of innovative business and financial management solutions for small and medium-sized businesses, consumers, accounting professionals and financial institutions."
     },
     {
       "title": "Vice President Online",
       "company": "Warner Bros.",
       "date": "September 1994 – March 2000 (5 years 7 months)",
+      "monthStart": "9",
+      "yearStart": "1994",
+      "currentWork": false,
+      "monthFinish": "3",
+      "yearFinish": "2000",
       "location": "",
       "logo": "",
-      "description": "<p>Helped oversee Warner Bros.' online efforts, including Warner Bros. Online and Entertaindom (one of the web's first original entertainment destination sites). </p><br><p>In December, 1994, began developing the initial business plan for Warner Bros. Online while an analyst in Corporate Planning & Development.</p>"
+      "description": "Helped oversee Warner Bros.' online efforts, including Warner Bros. Online and Entertaindom (one of the web's first original entertainment destination sites). <br /><br />In December, 1994, began developing the initial business plan for Warner Bros. Online while an analyst in Corporate Planning & Development."
     },
     {
       "title": "Member, Advisory Board",
       "company": "Boys & Girls Clubs of the Peninsula",
-      "date": "2011 – Present (5 years)",
+      "date": "2011 – Present",
+      "monthStart": "",
+      "yearStart": "2011",
+      "currentWork": true,
+      "monthFinish": "",
+      "yearFinish": "2016",
       "location": "San Francisco Bay Area",
       "logo": "images/world-bank.png",
-      "description": "<p>BGCP’s mission is to help its members develop the academic and life skills they need to complete high school ready for college and career.</p><br><p>BGCP serves youth in grades K–12 at nine locations: three clubhouses and six school sites in East Palo Alto, Menlo Park, and Redwood City, where over half the youth drop out of high school. While most youth development organizations select the young people whom they serve, BGCP serves all youth. The organization has grown rapidly over the past five years and now serves 2,000 active members at its nine sites.</p>"
+      "description": "BGCP’s mission is to help its members develop the academic and life skills they need to complete high school ready for college and career.<br /><br />BGCP serves youth in grades K–12 at nine locations: three clubhouses and six school sites in East Palo Alto, Menlo Park, and Redwood City, where over half the youth drop out of high school. While most youth development organizations select the young people whom they serve, BGCP serves all youth. The organization has grown rapidly over the past five years and now serves 2,000 active members at its nine sites."
     },
     {
       "title": "Senior Analyst",
       "company": "Braxton Associates",
       "date": "September 1992 – September 1994 (2 years 1 month)",
+      "monthStart": "9",
+      "yearStart": "1992",
+      "currentWork": false,
+      "monthFinish": "9",
+      "yearFinish": "1994",
       "location": "Boston",
       "logo": "",
-      "description": "<p>Analyst for strategic management consulting division of Deloitte & Touche. Case work included scenario planning, international expansion, brand consolidation, and new distribution strategies across multiple industries including food, health care, and energy.</p>"
+      "description": "Analyst for strategic management consulting division of Deloitte & Touche. Case work included scenario planning, international expansion, brand consolidation, and new distribution strategies across multiple industries including food, health care, and energy."
     }
   ],
 

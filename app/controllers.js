@@ -434,17 +434,14 @@ linkedinControllers.controller('ProfileCardCtrl', function ($scope, $http) {
 linkedinControllers.controller('BackgroundCtrl', function ($scope, $http) {
     $http.get('data/background.json').success(function (data) {
         $scope.background = data;
-        $scope.summaryTexarea = $scope.background.summary.replace(/<br \/>|<p>|<\/p>/gi, function myFunction(x){
-                if (x == "<br />")
-                    return "\n\n";
-                return "";
-            }
-        );
+        $scope.summaryTexarea = $scope.background.summary.replace(/<br \/>/gi, "\n");
     });
 
     $scope.saveSummary = function () {
         $scope.background.summary = $scope.summaryTexarea.replace(/\n/gi, "<br />");
     };
+
+    sc = $scope;
 
     var monthCode ={
         "1":"January",
@@ -461,26 +458,45 @@ linkedinControllers.controller('BackgroundCtrl', function ($scope, $http) {
         "12":"December"
     };
 
-    $scope.saveNewExp = function () {
-        var newExp = new Object();
-        newExp.company = $scope.newExpCompanyName;
-        newExp.title = $scope.newExpTitle;
-        newExp.location = $scope.newExpLocation;
-        newExp.description = $scope.newExpDescription;
-        newExp.monthStart = $scope.newExpMonthStart;
-        newExp.yearStart = $scope.newExpYearStart;
-        newExp.monthFinish = $scope.newExpMonthFinish;
-        newExp.yearFinish = $scope.newExpYearFinish;
-        newExp.logo = $scope.newExpLogoURL;
-        newExp.currentWork = $scope.newExpCurrentWork;
-        newExp.date = monthCode[$scope.newExpMonthStart] + ", " + $scope.newExpYearStart + " - ";
-        if (newExp.currentWork)
-            newExp.date += "Present";
-        else
-            newExp.date += monthCode[$scope.newExpMonthFinish] + ", " + $scope.newExpYearFinish;
-
-        $scope.background.experience.push(newExp);
+    $scope.editExp = function (idx) {
+        $scope.selectedExp = angular.copy($scope.background.experience[idx]);
+        $scope.selectedExp.description = $scope.selectedExp.description.replace(/<br \/>/gi, "\n")
+        $scope.selectedIdx = idx;
     };
+
+    $scope.addExp = function () {
+        $scope.selectedIdx = -1;
+        $scope.selectedExp = null;
+    }
+
+    $scope.saveExp = function () {
+        var exp = new Object();
+        exp.company = $scope.selectedExp.company;
+        exp.title = $scope.selectedExp.title;
+        exp.location = $scope.selectedExp.location;
+        exp.description = $scope.selectedExp.description.replace(/\n/gi, "<br />");
+        exp.monthStart = $scope.selectedExp.monthStart;
+        exp.yearStart = $scope.selectedExp.yearStart;
+        exp.monthFinish = $scope.selectedExp.monthFinish;
+        exp.yearFinish = $scope.selectedExp.yearFinish;
+        exp.logo = $scope.selectedExp.logo;
+        exp.currentWork = $scope.selectedExp.currentWork;
+        exp.date = monthCode[exp.monthStart] + ", " + exp.yearStart + " - ";
+        if (exp.currentWork)
+            exp.date += "Present";
+        else
+            exp.date += monthCode[exp.monthFinish] + ", " + exp.yearFinish;
+
+        if ($scope.selectedIdx != -1)
+            $scope.background.experience[$scope.selectedIdx] = exp;
+        else 
+            $scope.background.experience.push(exp);
+    };
+
+    $scope.removeExp = function () {
+        $scope.background.experience.splice($scope.selectedIdx, 1);
+        $scope.selectedIdx = -1;
+    }
     
     $scope.saveNewProject = function () {
         var newProject = new Object();
