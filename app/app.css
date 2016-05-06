@@ -159,6 +159,8 @@ h1:hover > .edit-field-icon::before
   color: #666;
   margin: 0px;
   padding: 5px 0px;
+    position: relative;
+    display: table-cell;
 }
 
 .location {
@@ -928,10 +930,14 @@ h5 a {
 .pop-up {
     padding: 15px;
     position: absolute;
-    background: #fff;display: none;
+    background: #fff;
+    display: none;
     border-color: #ededed #c9c9c9 #a4a4a4;
     border-style: solid;
     border-width: 1px;
+    font-size: 13px;
+    font-weight: normal;
+    z-index: 99999;
 }
 
 .pop-up div 
@@ -991,6 +997,11 @@ form input[type="text"], select {
     margin-right: 5px;
 }
 
+.pop-up input, .pop-up button {
+    display: inline;
+    
+}
+
 form input[type="checkbox"] {
     padding-top: 7px;
     margin-top: 7px;
@@ -1023,18 +1034,19 @@ input.full-row
 
 #pop-up-edit-name {
     top: -10px;
-    left: 180px; 
+    left: 100%; 
+    width: 242px;
 }
 
 #pop-up-edit-headline {
-    top: 18px;
-    right: -40px;
+    top: -7px;
+    left: 100%;
 }
 
 #pop-up-edit-location-industry {
     z-index: 9999;
-    top: 42px;
-    left: 130px;
+    left: 100%;
+    top: -15px;
 }
 
 #pop-up-edit-location-industry select
@@ -1095,4 +1107,34 @@ textarea {
 
 .activities-societies {
     margin-bottom: 10px;
+}
+
+.h1-name {
+    position: relative;
+}
+
+.locaindu {
+    position: relative;
+}
+
+.btn-remove-skill {
+    position: absolute;
+    left: 220px;
+}
+
+.li-skill {
+    position: relative;
+}
+
+.remove-skill {
+    padding-left: 7px;
+    color: #8a8a8a;
+    font-size: 15px;
+    font-weight: normal;
+    position: relative;
+}
+
+.remove-skill:hover {
+    color: #0073b2;
+    cursor: pointer;
 }

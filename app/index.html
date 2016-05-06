@@ -37,455 +37,460 @@
                         <div class="account-icon"></div>
 
                         <div class="basic-info">
-                            <h1>{{profileCard.firstName + ' ' + profileCard.lastName}} <i class="edit-field-icon edit-name"></i></h1>
-                            <div id="pop-up-edit-name" class="pop-up">
-                                <strong class="hover-form-header"></strong>
-                                <form>
-                                    <label for="name">Name</label>
-                                    <input ng-model="newFirstName" ng-value="profileCard.firstName" type="text">
-                                    <input ng-model="newLastName" ng-value="profileCard.lastName" type="text">
-                                    <br>
+                            <h1 class="h1-name">{{profileCard.firstName + ' ' + profileCard.lastName}}
+                                <div id="pop-up-edit-name" class="pop-up">
+                                    <strong class="hover-form-header"></strong>
+                                    <form>
+                                        <label>Name</label>
+                                        <input ng-model="newFirstName" ng-value="profileCard.firstName" type="text">
+                                        <input ng-model="newLastName" ng-value="profileCard.lastName" type="text">
+                                        <br>
 
-                                    <p class="action">
-                                        <button class="btn-primary" ng-click="saveName()">Save</button>
-                                        <button class="btn-cancel">Cancel</button>
-                                    </p>
-                                </form>
-                            </div>
-                            <p class="headline-title">
+                                        <p class="action">
+                                            <button class="btn-primary" ng-click="saveName()">Save</button>
+                                            <button class="btn-cancel">Cancel</button>
+                                        </p>
+                                    </form>
+                                </div>
+                                <i class="edit-field-icon edit-name"></i>
+                            </h1>
+
+                            <span class="headline-title">
                                 {{profileCard.headline}}
                                 <i class="edit-field-icon edit-headline"></i>
                                 <div id="pop-up-edit-headline" class="pop-up">
                                     <strong class="hover-form-header"></strong>
                                     <form>
-                                        <label for="headline">Your professional headline</label>
+                                        <label>Your professional headline</label>
                                         <input ng-model="newHeadline" ng-value="profileCard.headline" class="headline" type="text">
-                            <p class="action">
-                                <button ng-click="saveHeadline()" class="btn-primary">Save</button>
-                                <button class="btn-cancel">Cancel</button>
-                            </p>
-                            </form>
-                        </div>
-                        </p>
+                                        <p class="action">
+                                            <button ng-click="saveHeadline()" class="btn-primary">Save</button>
+                                            <button class="btn-cancel">Cancel</button>
+                                        </p>
+                                    </form>
+                                </div>
+                        </span>
                         <div class="location-container">
-                            <a href="#" class="location">{{profileCard.location}}</a> |
-                            <a href="#" class="industry">{{profileCard.industry}}</a>
-                            <i class="edit-field-icon edit-location-industry"></i>
-                            <div id="pop-up-edit-location-industry" class="pop-up">
-                                <strong class="hover-form-header"></strong>
-                                <form>
-                                    <label for="country">Country</label>
-                                    <select ng-model="newCountry">
-                                        <option selected="selected" value="">Choose country...</option>
-                                        <option value="us">United States</option>
-                                        <option value="af">Afghanistan</option>
-                                        <option value="ax">Aland Islands</option>
-                                        <option value="al">Albania</option>
-                                        <option value="dz">Algeria</option>
-                                        <option value="as">American Samoa</option>
-                                        <option value="ad">Andorra</option>
-                                        <option value="ao">Angola</option>
-                                        <option value="ai">Anguilla</option>
-                                        <option value="aq">Antarctica</option>
-                                        <option value="ag">Antigua and Barbuda</option>
-                                        <option value="ar">Argentina</option>
-                                        <option value="am">Armenia</option>
-                                        <option value="aw">Aruba</option>
-                                        <option value="au">Australia</option>
-                                        <option value="at">Austria</option>
-                                        <option value="az">Azerbaijan</option>
-                                        <option value="bs">Bahamas</option>
-                                        <option value="bh">Bahrain</option>
-                                        <option value="bd">Bangladesh</option>
-                                        <option value="bb">Barbados</option>
-                                        <option value="by">Belarus</option>
-                                        <option value="be">Belgium</option>
-                                        <option value="bz">Belize</option>
-                                        <option value="bj">Benin</option>
-                                        <option value="bm">Bermuda</option>
-                                        <option value="bt">Bhutan</option>
-                                        <option value="bo">Bolivia</option>
-                                        <option value="ba">Bosnia and Herzegovina</option>
-                                        <option value="bw">Botswana</option>
-                                        <option value="bv">Bouvet Island</option>
-                                        <option value="br">Brazil</option>
-                                        <option value="io">British Indian Ocean Territory</option>
-                                        <option value="bn">Brunei Darussalam</option>
-                                        <option value="bg">Bulgaria</option>
-                                        <option value="bf">Burkina Faso</option>
-                                        <option value="bi">Burundi</option>
-                                        <option value="kh">Cambodia</option>
-                                        <option value="cm">Cameroon</option>
-                                        <option value="ca">Canada</option>
-                                        <option value="cv">Cape Verde</option>
-                                        <option value="cb">Caribbean Nations</option>
-                                        <option value="ky">Cayman Islands</option>
-                                        <option value="cf">Central African Republic</option>
-                                        <option value="td">Chad</option>
-                                        <option value="cl">Chile</option>
-                                        <option value="cn">China</option>
-                                        <option value="cx">Christmas Island</option>
-                                        <option value="cc">Cocos (Keeling) Islands</option>
-                                        <option value="co">Colombia</option>
-                                        <option value="km">Comoros</option>
-                                        <option value="cg">Congo</option>
-                                        <option value="ck">Cook Islands</option>
-                                        <option value="cr">Costa Rica</option>
-                                        <option value="ci">Cote D’Ivoire (Ivory Coast)</option>
-                                        <option value="hr">Croatia</option>
-                                        <option value="cu">Cuba</option>
-                                        <option value="cy">Cyprus</option>
-                                        <option value="cz">Czech Republic</option>
-                                        <option value="cd">Democratic Republic of the Congo</option>
-                                        <option value="dk">Denmark</option>
-                                        <option value="dj">Djibouti</option>
-                                        <option value="dm">Dominica</option>
-                                        <option value="do">Dominican Republic</option>
-                                        <option value="tp">East Timor</option>
-                                        <option value="ec">Ecuador</option>
-                                        <option value="eg">Egypt</option>
-                                        <option value="sv">El Salvador</option>
-                                        <option value="gq">Equatorial Guinea</option>
-                                        <option value="er">Eritrea</option>
-                                        <option value="ee">Estonia</option>
-                                        <option value="et">Ethiopia</option>
-                                        <option value="fk">Falkland Islands (Malvinas)</option>
-                                        <option value="fo">Faroe Islands</option>
-                                        <option value="fm">Federated States of Micronesia</option>
-                                        <option value="fj">Fiji</option>
-                                        <option value="fi">Finland</option>
-                                        <option value="fr">France</option>
-                                        <option value="gf">French Guiana</option>
-                                        <option value="pf">French Polynesia</option>
-                                        <option value="tf">French Southern Territories</option>
-                                        <option value="ga">Gabon</option>
-                                        <option value="gm">Gambia</option>
-                                        <option value="ge">Georgia</option>
-                                        <option value="de">Germany</option>
-                                        <option value="gh">Ghana</option>
-                                        <option value="gi">Gibraltar</option>
-                                        <option value="gr">Greece</option>
-                                        <option value="gl">Greenland</option>
-                                        <option value="gd">Grenada</option>
-                                        <option value="gp">Guadeloupe</option>
-                                        <option value="gu">Guam</option>
-                                        <option value="gt">Guatemala</option>
-                                        <option value="gg">Guernsey</option>
-                                        <option value="gn">Guinea</option>
-                                        <option value="gw">Guinea-Bissau</option>
-                                        <option value="gy">Guyana</option>
-                                        <option value="ht">Haiti</option>
-                                        <option value="hm">Heard Island and McDonald Islands</option>
-                                        <option value="hn">Honduras</option>
-                                        <option value="hk">Hong Kong</option>
-                                        <option value="hu">Hungary</option>
-                                        <option value="is">Iceland</option>
-                                        <option value="in">India</option>
-                                        <option value="id">Indonesia</option>
-                                        <option value="ir">Iran</option>
-                                        <option value="iq">Iraq</option>
-                                        <option value="ie">Ireland</option>
-                                        <option value="im">Isle of Man</option>
-                                        <option value="il">Israel</option>
-                                        <option value="it">Italy</option>
-                                        <option value="jm">Jamaica</option>
-                                        <option value="jp">Japan</option>
-                                        <option value="je">Jersey</option>
-                                        <option value="jo">Jordan</option>
-                                        <option value="kz">Kazakhstan</option>
-                                        <option value="ke">Kenya</option>
-                                        <option value="ki">Kiribati</option>
-                                        <option value="kr">Korea</option>
-                                        <option value="kp">Korea (North)</option>
-                                        <option value="ko">Kosovo</option>
-                                        <option value="kw">Kuwait</option>
-                                        <option value="kg">Kyrgyzstan</option>
-                                        <option value="la">Laos</option>
-                                        <option value="lv">Latvia</option>
-                                        <option value="lb">Lebanon</option>
-                                        <option value="ls">Lesotho</option>
-                                        <option value="lr">Liberia</option>
-                                        <option value="ly">Libya</option>
-                                        <option value="li">Liechtenstein</option>
-                                        <option value="lt">Lithuania</option>
-                                        <option value="lu">Luxembourg</option>
-                                        <option value="mo">Macao</option>
-                                        <option value="mk">Macedonia</option>
-                                        <option value="mg">Madagascar</option>
-                                        <option value="mw">Malawi</option>
-                                        <option value="my">Malaysia</option>
-                                        <option value="mv">Maldives</option>
-                                        <option value="ml">Mali</option>
-                                        <option value="mt">Malta</option>
-                                        <option value="mh">Marshall Islands</option>
-                                        <option value="mq">Martinique</option>
-                                        <option value="mr">Mauritania</option>
-                                        <option value="mu">Mauritius</option>
-                                        <option value="yt">Mayotte</option>
-                                        <option value="mx">Mexico</option>
-                                        <option value="md">Moldova</option>
-                                        <option value="mc">Monaco</option>
-                                        <option value="mn">Mongolia</option>
-                                        <option value="me">Montenegro</option>
-                                        <option value="ms">Montserrat</option>
-                                        <option value="ma">Morocco</option>
-                                        <option value="mz">Mozambique</option>
-                                        <option value="mm">Myanmar</option>
-                                        <option value="na">Namibia</option>
-                                        <option value="nr">Nauru</option>
-                                        <option value="np">Nepal</option>
-                                        <option value="nl">Netherlands</option>
-                                        <option value="an">Netherlands Antilles</option>
-                                        <option value="nc">New Caledonia</option>
-                                        <option value="nz">New Zealand</option>
-                                        <option value="ni">Nicaragua</option>
-                                        <option value="ne">Niger</option>
-                                        <option value="ng">Nigeria</option>
-                                        <option value="nu">Niue</option>
-                                        <option value="nf">Norfolk Island</option>
-                                        <option value="mp">Northern Mariana Islands</option>
-                                        <option value="no">Norway</option>
-                                        <option value="pk">Pakistan</option>
-                                        <option value="pw">Palau</option>
-                                        <option value="ps">Palestinian Territory</option>
-                                        <option value="pa">Panama</option>
-                                        <option value="pg">Papua New Guinea</option>
-                                        <option value="py">Paraguay</option>
-                                        <option value="pe">Peru</option>
-                                        <option value="ph">Philippines</option>
-                                        <option value="pn">Pitcairn</option>
-                                        <option value="pl">Poland</option>
-                                        <option value="pt">Portugal</option>
-                                        <option value="pr">Puerto Rico</option>
-                                        <option value="qa">Qatar</option>
-                                        <option value="re">Reunion</option>
-                                        <option value="ro">Romania</option>
-                                        <option value="ru">Russian Federation</option>
-                                        <option value="rw">Rwanda</option>
-                                        <option value="gs">S. Georgia and S. Sandwich Islands</option>
-                                        <option value="sh">Saint Helena</option>
-                                        <option value="kn">Saint Kitts and Nevis</option>
-                                        <option value="lc">Saint Lucia</option>
-                                        <option value="pm">Saint Pierre and Miquelon</option>
-                                        <option value="vc">Saint Vincent and the Grenadines</option>
-                                        <option value="ws">Samoa</option>
-                                        <option value="sm">San Marino</option>
-                                        <option value="st">Sao Tome and Principe</option>
-                                        <option value="sa">Saudi Arabia</option>
-                                        <option value="sn">Senegal</option>
-                                        <option value="rs">Serbia</option>
-                                        <option value="cs">Serbia and Montenegro</option>
-                                        <option value="sc">Seychelles</option>
-                                        <option value="sl">Sierra Leone</option>
-                                        <option value="sg">Singapore</option>
-                                        <option value="sk">Slovak Republic</option>
-                                        <option value="si">Slovenia</option>
-                                        <option value="sb">Solomon Islands</option>
-                                        <option value="so">Somalia</option>
-                                        <option value="za">South Africa</option>
-                                        <option value="ss">South Sudan</option>
-                                        <option value="es">Spain</option>
-                                        <option value="lk">Sri Lanka</option>
-                                        <option value="sd">Sudan</option>
-                                        <option value="om">Sultanate of Oman</option>
-                                        <option value="sr">Suriname</option>
-                                        <option value="sj">Svalbard and Jan Mayen</option>
-                                        <option value="sz">Swaziland</option>
-                                        <option value="se">Sweden</option>
-                                        <option value="ch">Switzerland</option>
-                                        <option value="sy">Syria</option>
-                                        <option value="tw">Taiwan</option>
-                                        <option value="tj">Tajikistan</option>
-                                        <option value="tz">Tanzania</option>
-                                        <option value="th">Thailand</option>
-                                        <option value="tl">Timor-Leste</option>
-                                        <option value="tg">Togo</option>
-                                        <option value="tk">Tokelau</option>
-                                        <option value="to">Tonga</option>
-                                        <option value="tt">Trinidad and Tobago</option>
-                                        <option value="tn">Tunisia</option>
-                                        <option value="tr">Turkey</option>
-                                        <option value="tm">Turkmenistan</option>
-                                        <option value="tc">Turks and Caicos Islands</option>
-                                        <option value="tv">Tuvalu</option>
-                                        <option value="ug">Uganda</option>
-                                        <option value="ua">Ukraine</option>
-                                        <option value="ae">United Arab Emirates</option>
-                                        <option value="gb">United Kingdom</option>
-                                        <option value="uy">Uruguay</option>
-                                        <option value="uz">Uzbekistan</option>
-                                        <option value="vu">Vanuatu</option>
-                                        <option value="va">Vatican City State (Holy See)</option>
-                                        <option value="ve">Venezuela</option>
-                                        <option value="vn">Vietnam</option>
-                                        <option value="vg">Virgin Islands (British)</option>
-                                        <option value="vi">Virgin Islands (U.S.)</option>
-                                        <option value="wf">Wallis and Futuna</option>
-                                        <option value="eh">Western Sahara</option>
-                                        <option value="ye">Yemen</option>
-                                        <option value="zm">Zambia</option>
-                                        <option value="zw">Zimbabwe</option>
-                                        <option value="oo">Other</option>
-                                    </select>
-                                    <br>
-                                    <label for="industry">Industry</label>
-                                    <select ng-model="newIndustry">
-                                        <option selected="selected" value="">Choose industry...</option>
-                                        <option value="47">Accounting</option>
-                                        <option value="94">Airlines/Aviation</option>
-                                        <option value="120">Alternative Dispute Resolution</option>
-                                        <option value="125">Alternative Medicine</option>
-                                        <option value="127">Animation</option>
-                                        <option value="19">Apparel &amp; Fashion</option>
-                                        <option value="50">Architecture &amp; Planning</option>
-                                        <option value="111">Arts and Crafts</option>
-                                        <option value="53">Automotive</option>
-                                        <option value="52">Aviation &amp; Aerospace</option>
-                                        <option value="41">Banking</option>
-                                        <option value="12">Biotechnology</option>
-                                        <option value="36">Broadcast Media</option>
-                                        <option value="49">Building Materials</option>
-                                        <option value="138">Business Supplies and Equipment</option>
-                                        <option value="129">Capital Markets</option>
-                                        <option value="54">Chemicals</option>
-                                        <option value="90">Civic &amp; Social Organization</option>
-                                        <option value="51">Civil Engineering</option>
-                                        <option value="128">Commercial Real Estate</option>
-                                        <option value="118">Computer &amp; Network Security</option>
-                                        <option value="109">Computer Games</option>
-                                        <option value="3">Computer Hardware</option>
-                                        <option value="5">Computer Networking</option>
-                                        <option value="4">Computer Software</option>
-                                        <option value="48">Construction</option>
-                                        <option value="24">Consumer Electronics</option>
-                                        <option value="25">Consumer Goods</option>
-                                        <option value="91">Consumer Services</option>
-                                        <option value="18">Cosmetics</option>
-                                        <option value="65">Dairy</option>
-                                        <option value="1">Defense &amp; Space</option>
-                                        <option value="99">Design</option>
-                                        <option value="69">Education Management</option>
-                                        <option value="132">E-Learning</option>
-                                        <option value="112">Electrical/Electronic Manufacturing</option>
-                                        <option value="28">Entertainment</option>
-                                        <option value="86">Environmental Services</option>
-                                        <option value="110">Events Services</option>
-                                        <option value="76">Executive Office</option>
-                                        <option value="122">Facilities Services</option>
-                                        <option value="63">Farming</option>
-                                        <option value="43">Financial Services</option>
-                                        <option value="38">Fine Art</option>
-                                        <option value="66">Fishery</option>
-                                        <option value="34">Food &amp; Beverages</option>
-                                        <option value="23">Food Production</option>
-                                        <option value="101">Fund-Raising</option>
-                                        <option value="26">Furniture</option>
-                                        <option value="29">Gambling &amp; Casinos</option>
-                                        <option value="145">Glass, Ceramics &amp; Concrete</option>
-                                        <option value="75">Government Administration</option>
-                                        <option value="148">Government Relations</option>
-                                        <option value="140">Graphic Design</option>
-                                        <option value="124">Health, Wellness and Fitness</option>
-                                        <option value="68">Higher Education</option>
-                                        <option value="14">Hospital &amp; Health Care</option>
-                                        <option value="31">Hospitality</option>
-                                        <option value="137">Human Resources</option>
-                                        <option value="134">Import and Export</option>
-                                        <option value="88">Individual &amp; Family Services</option>
-                                        <option value="147">Industrial Automation</option>
-                                        <option value="84">Information Services</option>
-                                        <option value="96">Information Technology and Services</option>
-                                        <option value="42">Insurance</option>
-                                        <option value="74">International Affairs</option>
-                                        <option value="141">International Trade and Development</option>
-                                        <option value="6">Internet</option>
-                                        <option value="45">Investment Banking</option>
-                                        <option value="46">Investment Management</option>
-                                        <option value="73">Judiciary</option>
-                                        <option value="77">Law Enforcement</option>
-                                        <option value="9">Law Practice</option>
-                                        <option value="10">Legal Services</option>
-                                        <option value="72">Legislative Office</option>
-                                        <option value="30">Leisure, Travel &amp; Tourism</option>
-                                        <option value="85">Libraries</option>
-                                        <option value="116">Logistics and Supply Chain</option>
-                                        <option value="143">Luxury Goods &amp; Jewelry</option>
-                                        <option value="55">Machinery</option>
-                                        <option value="11">Management Consulting</option>
-                                        <option value="95">Maritime</option>
-                                        <option value="80">Marketing and Advertising</option>
-                                        <option value="97">Market Research</option>
-                                        <option value="135">Mechanical or Industrial Engineering</option>
-                                        <option value="126">Media Production</option>
-                                        <option value="17">Medical Devices</option>
-                                        <option value="13">Medical Practice</option>
-                                        <option value="139">Mental Health Care</option>
-                                        <option value="71">Military</option>
-                                        <option value="56">Mining &amp; Metals</option>
-                                        <option value="35">Motion Pictures and Film</option>
-                                        <option value="37">Museums and Institutions</option>
-                                        <option value="115">Music</option>
-                                        <option value="114">Nanotechnology</option>
-                                        <option value="81">Newspapers</option>
-                                        <option value="100">Nonprofit Organization Management</option>
-                                        <option value="57">Oil &amp; Energy</option>
-                                        <option value="113">Online Media</option>
-                                        <option value="123">Outsourcing/Offshoring</option>
-                                        <option value="87">Package/Freight Delivery</option>
-                                        <option value="146">Packaging and Containers</option>
-                                        <option value="61">Paper &amp; Forest Products</option>
-                                        <option value="39">Performing Arts</option>
-                                        <option value="15">Pharmaceuticals</option>
-                                        <option value="131">Philanthropy</option>
-                                        <option value="136">Photography</option>
-                                        <option value="117">Plastics</option>
-                                        <option value="107">Political Organization</option>
-                                        <option value="67">Primary/Secondary Education</option>
-                                        <option value="83">Printing</option>
-                                        <option value="105">Professional Training &amp; Coaching</option>
-                                        <option value="102">Program Development</option>
-                                        <option value="79">Public Policy</option>
-                                        <option value="98">Public Relations and Communications</option>
-                                        <option value="78">Public Safety</option>
-                                        <option value="82">Publishing</option>
-                                        <option value="62">Railroad Manufacture</option>
-                                        <option value="64">Ranching</option>
-                                        <option value="44">Real Estate</option>
-                                        <option value="40">Recreational Facilities and Services</option>
-                                        <option value="89">Religious Institutions</option>
-                                        <option value="144">Renewables &amp; Environment</option>
-                                        <option value="70">Research</option>
-                                        <option value="32">Restaurants</option>
-                                        <option value="27">Retail</option>
-                                        <option value="121">Security and Investigations</option>
-                                        <option value="7">Semiconductors</option>
-                                        <option value="58">Shipbuilding</option>
-                                        <option value="20">Sporting Goods</option>
-                                        <option value="33">Sports</option>
-                                        <option value="104">Staffing and Recruiting</option>
-                                        <option value="22">Supermarkets</option>
-                                        <option value="8">Telecommunications</option>
-                                        <option value="60">Textiles</option>
-                                        <option value="130">Think Tanks</option>
-                                        <option value="21">Tobacco</option>
-                                        <option value="108">Translation and Localization</option>
-                                        <option value="92">Transportation/Trucking/Railroad</option>
-                                        <option value="59">Utilities</option>
-                                        <option value="106">Venture Capital &amp; Private Equity</option>
-                                        <option value="16">Veterinary</option>
-                                        <option value="93">Warehousing</option>
-                                        <option value="133">Wholesale</option>
-                                        <option value="142">Wine and Spirits</option>
-                                        <option value="119">Wireless</option>
-                                        <option value="103">Writing and Editing</option>
-                                    </select>
-                                    <br>
-                                    <p class="action">
-                                        <button ng-click="saveCountryIndustry()" class="btn-primary">Save</button>
-                                        <button class="btn-cancel">Cancel</button>
-                                    </p>
-                                </form>
-                            </div>
+                            <span class="locaindu">
+                                <a href="#" class="location">{{profileCard.location}}</a> |
+                                <a href="#" class="industry">{{profileCard.industry}}</a>
+                                <i class="edit-field-icon edit-location-industry"></i>
+                                <div id="pop-up-edit-location-industry" class="pop-up">
+                                    <strong class="hover-form-header"></strong>
+                                    <form>
+                                        <label>Country</label>
+                                        <select ng-model="newCountry">
+                                            <option selected="selected" value="">Choose country...</option>
+                                            <option value="us">United States</option>
+                                            <option value="af">Afghanistan</option>
+                                            <option value="ax">Aland Islands</option>
+                                            <option value="al">Albania</option>
+                                            <option value="dz">Algeria</option>
+                                            <option value="as">American Samoa</option>
+                                            <option value="ad">Andorra</option>
+                                            <option value="ao">Angola</option>
+                                            <option value="ai">Anguilla</option>
+                                            <option value="aq">Antarctica</option>
+                                            <option value="ag">Antigua and Barbuda</option>
+                                            <option value="ar">Argentina</option>
+                                            <option value="am">Armenia</option>
+                                            <option value="aw">Aruba</option>
+                                            <option value="au">Australia</option>
+                                            <option value="at">Austria</option>
+                                            <option value="az">Azerbaijan</option>
+                                            <option value="bs">Bahamas</option>
+                                            <option value="bh">Bahrain</option>
+                                            <option value="bd">Bangladesh</option>
+                                            <option value="bb">Barbados</option>
+                                            <option value="by">Belarus</option>
+                                            <option value="be">Belgium</option>
+                                            <option value="bz">Belize</option>
+                                            <option value="bj">Benin</option>
+                                            <option value="bm">Bermuda</option>
+                                            <option value="bt">Bhutan</option>
+                                            <option value="bo">Bolivia</option>
+                                            <option value="ba">Bosnia and Herzegovina</option>
+                                            <option value="bw">Botswana</option>
+                                            <option value="bv">Bouvet Island</option>
+                                            <option value="br">Brazil</option>
+                                            <option value="io">British Indian Ocean Territory</option>
+                                            <option value="bn">Brunei Darussalam</option>
+                                            <option value="bg">Bulgaria</option>
+                                            <option value="bf">Burkina Faso</option>
+                                            <option value="bi">Burundi</option>
+                                            <option value="kh">Cambodia</option>
+                                            <option value="cm">Cameroon</option>
+                                            <option value="ca">Canada</option>
+                                            <option value="cv">Cape Verde</option>
+                                            <option value="cb">Caribbean Nations</option>
+                                            <option value="ky">Cayman Islands</option>
+                                            <option value="cf">Central African Republic</option>
+                                            <option value="td">Chad</option>
+                                            <option value="cl">Chile</option>
+                                            <option value="cn">China</option>
+                                            <option value="cx">Christmas Island</option>
+                                            <option value="cc">Cocos (Keeling) Islands</option>
+                                            <option value="co">Colombia</option>
+                                            <option value="km">Comoros</option>
+                                            <option value="cg">Congo</option>
+                                            <option value="ck">Cook Islands</option>
+                                            <option value="cr">Costa Rica</option>
+                                            <option value="ci">Cote D’Ivoire (Ivory Coast)</option>
+                                            <option value="hr">Croatia</option>
+                                            <option value="cu">Cuba</option>
+                                            <option value="cy">Cyprus</option>
+                                            <option value="cz">Czech Republic</option>
+                                            <option value="cd">Democratic Republic of the Congo</option>
+                                            <option value="dk">Denmark</option>
+                                            <option value="dj">Djibouti</option>
+                                            <option value="dm">Dominica</option>
+                                            <option value="do">Dominican Republic</option>
+                                            <option value="tp">East Timor</option>
+                                            <option value="ec">Ecuador</option>
+                                            <option value="eg">Egypt</option>
+                                            <option value="sv">El Salvador</option>
+                                            <option value="gq">Equatorial Guinea</option>
+                                            <option value="er">Eritrea</option>
+                                            <option value="ee">Estonia</option>
+                                            <option value="et">Ethiopia</option>
+                                            <option value="fk">Falkland Islands (Malvinas)</option>
+                                            <option value="fo">Faroe Islands</option>
+                                            <option value="fm">Federated States of Micronesia</option>
+                                            <option value="fj">Fiji</option>
+                                            <option value="fi">Finland</option>
+                                            <option value="fr">France</option>
+                                            <option value="gf">French Guiana</option>
+                                            <option value="pf">French Polynesia</option>
+                                            <option value="tf">French Southern Territories</option>
+                                            <option value="ga">Gabon</option>
+                                            <option value="gm">Gambia</option>
+                                            <option value="ge">Georgia</option>
+                                            <option value="de">Germany</option>
+                                            <option value="gh">Ghana</option>
+                                            <option value="gi">Gibraltar</option>
+                                            <option value="gr">Greece</option>
+                                            <option value="gl">Greenland</option>
+                                            <option value="gd">Grenada</option>
+                                            <option value="gp">Guadeloupe</option>
+                                            <option value="gu">Guam</option>
+                                            <option value="gt">Guatemala</option>
+                                            <option value="gg">Guernsey</option>
+                                            <option value="gn">Guinea</option>
+                                            <option value="gw">Guinea-Bissau</option>
+                                            <option value="gy">Guyana</option>
+                                            <option value="ht">Haiti</option>
+                                            <option value="hm">Heard Island and McDonald Islands</option>
+                                            <option value="hn">Honduras</option>
+                                            <option value="hk">Hong Kong</option>
+                                            <option value="hu">Hungary</option>
+                                            <option value="is">Iceland</option>
+                                            <option value="in">India</option>
+                                            <option value="id">Indonesia</option>
+                                            <option value="ir">Iran</option>
+                                            <option value="iq">Iraq</option>
+                                            <option value="ie">Ireland</option>
+                                            <option value="im">Isle of Man</option>
+                                            <option value="il">Israel</option>
+                                            <option value="it">Italy</option>
+                                            <option value="jm">Jamaica</option>
+                                            <option value="jp">Japan</option>
+                                            <option value="je">Jersey</option>
+                                            <option value="jo">Jordan</option>
+                                            <option value="kz">Kazakhstan</option>
+                                            <option value="ke">Kenya</option>
+                                            <option value="ki">Kiribati</option>
+                                            <option value="kr">Korea</option>
+                                            <option value="kp">Korea (North)</option>
+                                            <option value="ko">Kosovo</option>
+                                            <option value="kw">Kuwait</option>
+                                            <option value="kg">Kyrgyzstan</option>
+                                            <option value="la">Laos</option>
+                                            <option value="lv">Latvia</option>
+                                            <option value="lb">Lebanon</option>
+                                            <option value="ls">Lesotho</option>
+                                            <option value="lr">Liberia</option>
+                                            <option value="ly">Libya</option>
+                                            <option value="li">Liechtenstein</option>
+                                            <option value="lt">Lithuania</option>
+                                            <option value="lu">Luxembourg</option>
+                                            <option value="mo">Macao</option>
+                                            <option value="mk">Macedonia</option>
+                                            <option value="mg">Madagascar</option>
+                                            <option value="mw">Malawi</option>
+                                            <option value="my">Malaysia</option>
+                                            <option value="mv">Maldives</option>
+                                            <option value="ml">Mali</option>
+                                            <option value="mt">Malta</option>
+                                            <option value="mh">Marshall Islands</option>
+                                            <option value="mq">Martinique</option>
+                                            <option value="mr">Mauritania</option>
+                                            <option value="mu">Mauritius</option>
+                                            <option value="yt">Mayotte</option>
+                                            <option value="mx">Mexico</option>
+                                            <option value="md">Moldova</option>
+                                            <option value="mc">Monaco</option>
+                                            <option value="mn">Mongolia</option>
+                                            <option value="me">Montenegro</option>
+                                            <option value="ms">Montserrat</option>
+                                            <option value="ma">Morocco</option>
+                                            <option value="mz">Mozambique</option>
+                                            <option value="mm">Myanmar</option>
+                                            <option value="na">Namibia</option>
+                                            <option value="nr">Nauru</option>
+                                            <option value="np">Nepal</option>
+                                            <option value="nl">Netherlands</option>
+                                            <option value="an">Netherlands Antilles</option>
+                                            <option value="nc">New Caledonia</option>
+                                            <option value="nz">New Zealand</option>
+                                            <option value="ni">Nicaragua</option>
+                                            <option value="ne">Niger</option>
+                                            <option value="ng">Nigeria</option>
+                                            <option value="nu">Niue</option>
+                                            <option value="nf">Norfolk Island</option>
+                                            <option value="mp">Northern Mariana Islands</option>
+                                            <option value="no">Norway</option>
+                                            <option value="pk">Pakistan</option>
+                                            <option value="pw">Palau</option>
+                                            <option value="ps">Palestinian Territory</option>
+                                            <option value="pa">Panama</option>
+                                            <option value="pg">Papua New Guinea</option>
+                                            <option value="py">Paraguay</option>
+                                            <option value="pe">Peru</option>
+                                            <option value="ph">Philippines</option>
+                                            <option value="pn">Pitcairn</option>
+                                            <option value="pl">Poland</option>
+                                            <option value="pt">Portugal</option>
+                                            <option value="pr">Puerto Rico</option>
+                                            <option value="qa">Qatar</option>
+                                            <option value="re">Reunion</option>
+                                            <option value="ro">Romania</option>
+                                            <option value="ru">Russian Federation</option>
+                                            <option value="rw">Rwanda</option>
+                                            <option value="gs">S. Georgia and S. Sandwich Islands</option>
+                                            <option value="sh">Saint Helena</option>
+                                            <option value="kn">Saint Kitts and Nevis</option>
+                                            <option value="lc">Saint Lucia</option>
+                                            <option value="pm">Saint Pierre and Miquelon</option>
+                                            <option value="vc">Saint Vincent and the Grenadines</option>
+                                            <option value="ws">Samoa</option>
+                                            <option value="sm">San Marino</option>
+                                            <option value="st">Sao Tome and Principe</option>
+                                            <option value="sa">Saudi Arabia</option>
+                                            <option value="sn">Senegal</option>
+                                            <option value="rs">Serbia</option>
+                                            <option value="cs">Serbia and Montenegro</option>
+                                            <option value="sc">Seychelles</option>
+                                            <option value="sl">Sierra Leone</option>
+                                            <option value="sg">Singapore</option>
+                                            <option value="sk">Slovak Republic</option>
+                                            <option value="si">Slovenia</option>
+                                            <option value="sb">Solomon Islands</option>
+                                            <option value="so">Somalia</option>
+                                            <option value="za">South Africa</option>
+                                            <option value="ss">South Sudan</option>
+                                            <option value="es">Spain</option>
+                                            <option value="lk">Sri Lanka</option>
+                                            <option value="sd">Sudan</option>
+                                            <option value="om">Sultanate of Oman</option>
+                                            <option value="sr">Suriname</option>
+                                            <option value="sj">Svalbard and Jan Mayen</option>
+                                            <option value="sz">Swaziland</option>
+                                            <option value="se">Sweden</option>
+                                            <option value="ch">Switzerland</option>
+                                            <option value="sy">Syria</option>
+                                            <option value="tw">Taiwan</option>
+                                            <option value="tj">Tajikistan</option>
+                                            <option value="tz">Tanzania</option>
+                                            <option value="th">Thailand</option>
+                                            <option value="tl">Timor-Leste</option>
+                                            <option value="tg">Togo</option>
+                                            <option value="tk">Tokelau</option>
+                                            <option value="to">Tonga</option>
+                                            <option value="tt">Trinidad and Tobago</option>
+                                            <option value="tn">Tunisia</option>
+                                            <option value="tr">Turkey</option>
+                                            <option value="tm">Turkmenistan</option>
+                                            <option value="tc">Turks and Caicos Islands</option>
+                                            <option value="tv">Tuvalu</option>
+                                            <option value="ug">Uganda</option>
+                                            <option value="ua">Ukraine</option>
+                                            <option value="ae">United Arab Emirates</option>
+                                            <option value="gb">United Kingdom</option>
+                                            <option value="uy">Uruguay</option>
+                                            <option value="uz">Uzbekistan</option>
+                                            <option value="vu">Vanuatu</option>
+                                            <option value="va">Vatican City State (Holy See)</option>
+                                            <option value="ve">Venezuela</option>
+                                            <option value="vn">Vietnam</option>
+                                            <option value="vg">Virgin Islands (British)</option>
+                                            <option value="vi">Virgin Islands (U.S.)</option>
+                                            <option value="wf">Wallis and Futuna</option>
+                                            <option value="eh">Western Sahara</option>
+                                            <option value="ye">Yemen</option>
+                                            <option value="zm">Zambia</option>
+                                            <option value="zw">Zimbabwe</option>
+                                            <option value="oo">Other</option>
+                                        </select>
+                                        <br>
+                                        <label>Industry</label>
+                                        <select ng-model="newIndustry">
+                                            <option selected="selected" value="">Choose industry...</option>
+                                            <option value="47">Accounting</option>
+                                            <option value="94">Airlines/Aviation</option>
+                                            <option value="120">Alternative Dispute Resolution</option>
+                                            <option value="125">Alternative Medicine</option>
+                                            <option value="127">Animation</option>
+                                            <option value="19">Apparel &amp; Fashion</option>
+                                            <option value="50">Architecture &amp; Planning</option>
+                                            <option value="111">Arts and Crafts</option>
+                                            <option value="53">Automotive</option>
+                                            <option value="52">Aviation &amp; Aerospace</option>
+                                            <option value="41">Banking</option>
+                                            <option value="12">Biotechnology</option>
+                                            <option value="36">Broadcast Media</option>
+                                            <option value="49">Building Materials</option>
+                                            <option value="138">Business Supplies and Equipment</option>
+                                            <option value="129">Capital Markets</option>
+                                            <option value="54">Chemicals</option>
+                                            <option value="90">Civic &amp; Social Organization</option>
+                                            <option value="51">Civil Engineering</option>
+                                            <option value="128">Commercial Real Estate</option>
+                                            <option value="118">Computer &amp; Network Security</option>
+                                            <option value="109">Computer Games</option>
+                                            <option value="3">Computer Hardware</option>
+                                            <option value="5">Computer Networking</option>
+                                            <option value="4">Computer Software</option>
+                                            <option value="48">Construction</option>
+                                            <option value="24">Consumer Electronics</option>
+                                            <option value="25">Consumer Goods</option>
+                                            <option value="91">Consumer Services</option>
+                                            <option value="18">Cosmetics</option>
+                                            <option value="65">Dairy</option>
+                                            <option value="1">Defense &amp; Space</option>
+                                            <option value="99">Design</option>
+                                            <option value="69">Education Management</option>
+                                            <option value="132">E-Learning</option>
+                                            <option value="112">Electrical/Electronic Manufacturing</option>
+                                            <option value="28">Entertainment</option>
+                                            <option value="86">Environmental Services</option>
+                                            <option value="110">Events Services</option>
+                                            <option value="76">Executive Office</option>
+                                            <option value="122">Facilities Services</option>
+                                            <option value="63">Farming</option>
+                                            <option value="43">Financial Services</option>
+                                            <option value="38">Fine Art</option>
+                                            <option value="66">Fishery</option>
+                                            <option value="34">Food &amp; Beverages</option>
+                                            <option value="23">Food Production</option>
+                                            <option value="101">Fund-Raising</option>
+                                            <option value="26">Furniture</option>
+                                            <option value="29">Gambling &amp; Casinos</option>
+                                            <option value="145">Glass, Ceramics &amp; Concrete</option>
+                                            <option value="75">Government Administration</option>
+                                            <option value="148">Government Relations</option>
+                                            <option value="140">Graphic Design</option>
+                                            <option value="124">Health, Wellness and Fitness</option>
+                                            <option value="68">Higher Education</option>
+                                            <option value="14">Hospital &amp; Health Care</option>
+                                            <option value="31">Hospitality</option>
+                                            <option value="137">Human Resources</option>
+                                            <option value="134">Import and Export</option>
+                                            <option value="88">Individual &amp; Family Services</option>
+                                            <option value="147">Industrial Automation</option>
+                                            <option value="84">Information Services</option>
+                                            <option value="96">Information Technology and Services</option>
+                                            <option value="42">Insurance</option>
+                                            <option value="74">International Affairs</option>
+                                            <option value="141">International Trade and Development</option>
+                                            <option value="6">Internet</option>
+                                            <option value="45">Investment Banking</option>
+                                            <option value="46">Investment Management</option>
+                                            <option value="73">Judiciary</option>
+                                            <option value="77">Law Enforcement</option>
+                                            <option value="9">Law Practice</option>
+                                            <option value="10">Legal Services</option>
+                                            <option value="72">Legislative Office</option>
+                                            <option value="30">Leisure, Travel &amp; Tourism</option>
+                                            <option value="85">Libraries</option>
+                                            <option value="116">Logistics and Supply Chain</option>
+                                            <option value="143">Luxury Goods &amp; Jewelry</option>
+                                            <option value="55">Machinery</option>
+                                            <option value="11">Management Consulting</option>
+                                            <option value="95">Maritime</option>
+                                            <option value="80">Marketing and Advertising</option>
+                                            <option value="97">Market Research</option>
+                                            <option value="135">Mechanical or Industrial Engineering</option>
+                                            <option value="126">Media Production</option>
+                                            <option value="17">Medical Devices</option>
+                                            <option value="13">Medical Practice</option>
+                                            <option value="139">Mental Health Care</option>
+                                            <option value="71">Military</option>
+                                            <option value="56">Mining &amp; Metals</option>
+                                            <option value="35">Motion Pictures and Film</option>
+                                            <option value="37">Museums and Institutions</option>
+                                            <option value="115">Music</option>
+                                            <option value="114">Nanotechnology</option>
+                                            <option value="81">Newspapers</option>
+                                            <option value="100">Nonprofit Organization Management</option>
+                                            <option value="57">Oil &amp; Energy</option>
+                                            <option value="113">Online Media</option>
+                                            <option value="123">Outsourcing/Offshoring</option>
+                                            <option value="87">Package/Freight Delivery</option>
+                                            <option value="146">Packaging and Containers</option>
+                                            <option value="61">Paper &amp; Forest Products</option>
+                                            <option value="39">Performing Arts</option>
+                                            <option value="15">Pharmaceuticals</option>
+                                            <option value="131">Philanthropy</option>
+                                            <option value="136">Photography</option>
+                                            <option value="117">Plastics</option>
+                                            <option value="107">Political Organization</option>
+                                            <option value="67">Primary/Secondary Education</option>
+                                            <option value="83">Printing</option>
+                                            <option value="105">Professional Training &amp; Coaching</option>
+                                            <option value="102">Program Development</option>
+                                            <option value="79">Public Policy</option>
+                                            <option value="98">Public Relations and Communications</option>
+                                            <option value="78">Public Safety</option>
+                                            <option value="82">Publishing</option>
+                                            <option value="62">Railroad Manufacture</option>
+                                            <option value="64">Ranching</option>
+                                            <option value="44">Real Estate</option>
+                                            <option value="40">Recreational Facilities and Services</option>
+                                            <option value="89">Religious Institutions</option>
+                                            <option value="144">Renewables &amp; Environment</option>
+                                            <option value="70">Research</option>
+                                            <option value="32">Restaurants</option>
+                                            <option value="27">Retail</option>
+                                            <option value="121">Security and Investigations</option>
+                                            <option value="7">Semiconductors</option>
+                                            <option value="58">Shipbuilding</option>
+                                            <option value="20">Sporting Goods</option>
+                                            <option value="33">Sports</option>
+                                            <option value="104">Staffing and Recruiting</option>
+                                            <option value="22">Supermarkets</option>
+                                            <option value="8">Telecommunications</option>
+                                            <option value="60">Textiles</option>
+                                            <option value="130">Think Tanks</option>
+                                            <option value="21">Tobacco</option>
+                                            <option value="108">Translation and Localization</option>
+                                            <option value="92">Transportation/Trucking/Railroad</option>
+                                            <option value="59">Utilities</option>
+                                            <option value="106">Venture Capital &amp; Private Equity</option>
+                                            <option value="16">Veterinary</option>
+                                            <option value="93">Warehousing</option>
+                                            <option value="133">Wholesale</option>
+                                            <option value="142">Wine and Spirits</option>
+                                            <option value="119">Wireless</option>
+                                            <option value="103">Writing and Editing</option>
+                                        </select>
+                                        <br>
+                                        <p class="action">
+                                            <button ng-click="saveCountryIndustry()" class="btn-primary">Save</button>
+                                            <button class="btn-cancel">Cancel</button>
+                                        </p>
+                                    </form>
+                                </div>
+                            </span>
                         </div>
                     </div>
                 </div>
@@ -620,7 +625,7 @@
                         <input ng-model="selectedExp.title" class="full-row" type="text">
                         <label>Location</label>
                         <input ng-model="selectedExp.location" class="full-row" type="text">
-                        <label">Time Period</label>
+                        <label>Time Period</label>
                         <select ng-model="selectedExp.monthStart">
                             <option value="" selected="selected">Choose...</option>
                             <option value="1">January</option>
@@ -698,7 +703,7 @@
         <div id="background-project-container" class="background-section">
             <div class="project-header">
                 <h3>Projects
-                    <button id="btn-add-project" class="add-item">Add project</button>
+                    <button ng-click="addProject()" id="btn-add-project" class="add-item">Add project</button>
                 </h3>
             </div>
 
@@ -706,16 +711,16 @@
                 <div class="add-project-container">
                     <form>
                         <label>Name</label>
-                        <input ng-model="newProjectName" type="text" class="full-row">
+                        <input ng-model="selectedProject.name" type="text" class="full-row">
                         <label>Occupation</label>
-                        <select ng-model="newProjectOccupation" class="occupation-project">
+                        <select ng-model="selectedProject.occupation" class="occupation-project">
                             <option value="" selected="selected">Occupation</option>
                             <option ng-repeat="exp in background.experience">
                                 {{exp.company}}
                             </option>
                         </select>
                         <label>Date</label>
-                        <select ng-model="newProjectMonth">
+                        <select ng-model="selectedProject.month">
                             <option value="" selected="selected">Month</option>
                             <option value="1">January</option>
                             <option value="2">February</option>
@@ -730,7 +735,7 @@
                             <option value="11">November</option>
                             <option value="12">December</option>
                         </select>
-                        <select ng-model="newProjectYear">
+                        <select ng-model="selectedProject.year">
                             <option value="" selected="selected">Year</option>
                             <option value="2016">2016</option>
                             <option value="2015">2015</option>
@@ -851,22 +856,23 @@
                             <option value="1900">1990</option>
                         </select>
                         <label>Team Member(s)</label>
-                        <input ng-model="newProjectMembers" type="text" class="full-row">
+                        <input ng-model="selectedProject.members" type="text" class="full-row">
                         <label>Project URL</label>
-                        <input type="text" ng-model="newProjectURL" class="full-row">
+                        <input type="text" ng-model="selectedProject.url" class="full-row">
                         <label>Description</label>
-                                <textarea ng-model="newProjectDescription" rows="3" cols="120">
+                                <textarea ng-model="selectedProject.description" rows="3" cols="120">
                                 </textarea>
                         <p class="action">
-                            <button ng-click="saveNewProject()" id="btn-save-project" class="btn-primary">Save</button>
+                            <button ng-click="saveProject()" id="btn-save-project" class="btn-primary">Save</button>
+                            <button ng-show="selectedIdx > -1" ng-click="removeProject()" id="btn-remove-project" class="btn-remove">Remove</button>
                             <button id="btn-cancel-add-project" class="btn-cancel">Cancel</button>
                         </p>
                     </form>
                 </div>
                 <div ng-repeat="project in background.projects" class="project-view">
-                    <h4>{{project.name}} <i class="edit-field-icon"></i></h4>
+                    <h4>{{project.name}} <i id="edit-project" ng-click="editProject($index)" class="edit-field-icon"></i></h4>
                     <h5>{{project.date}} <i class="edit-field-icon"></i></h5>
-                    <p>{{project.description}} <i class="edit-field-icon"></i>
+                    <p ng-bind-html="project.description"> <i class="edit-field-icon"></i>
                     </p>
                     <div class="project-team">
                         <span>{{project.members.length}} team members, including: <i class="edit-field-icon"></i></span>
@@ -923,28 +929,25 @@
                         </p>
                     </form>
                 </div>
-                <h5>Top Skills <i class="edit-field-icon"></i></h5>
+                <h5>Top Skills <i ng-click="editSkill(true)" class="edit-field-icon"></i></h5>
                 <ul class="skills-section">
-                    <li ng-repeat="skill in background.skill | orderBy:'endorseCount':true | limitTo:10 ">
+                    <li class="li-skill" ng-repeat="skill in background.skill | orderBy:'endorseCount':true | limitTo:10 ">
                                 <span class="skill-pill">
-                                <span class="endorse-count">{{skill.endorseCount}}</span>
-                                <span class="endorse-item-name">{{skill.name}}</span>
+                                    <span class="endorse-count">{{skill.endorseCount}}</span>
+                                    <span class="endorse-item-name">{{skill.name}}
+                                        <span ng-show="editTopSkill" ng-click="removeSkill($index, skill.name, true)" class="remove-skill">x</span>
+                                    </span>
                                 </span>
-
-                        <div class="endorsers-container">
-                            <ul class="endorsers-pics">
-                                <li></li>
-                            </ul>
-                        </div>
                     </li>
                 </ul>
 
-                <h5>Jeff also knows about... <i class="edit-field-icon"></i></h5>
+                <h5>Jeff also knows about... <i ng-click="editSkill(false)" class="edit-field-icon"></i></h5>
                 <ul class="skills-section more-skill">
                     <li ng-repeat="skill in background.skill | orderBy:'endorseCount':true | limitTo:background.skill.length : 10">
                                 <span class="skill-pill">
                                 <a href="#" class="endorse-count">{{skill.endorseCount}}</a>
-                                <span class="endorse-item-name">{{skill.name}}</span>
+                                <span class="endorse-item-name">{{skill.name}}
+                                    <span ng-click="removeSkill($index, skill.name, false)" ng-show="editMoreSkill" class="remove-skill">x</span></span>
                                 </span>
                     </li>
                 </ul>
@@ -954,7 +957,7 @@
         <div id="background-education-container" class="background-section">
             <div class="education-header">
                 <h3>Education
-                    <button id="btn-add-education" class="add-item">Add education</button>
+                    <button ng-click="addEdu()" id="btn-add-education" class="add-item">Add education</button>
                 </h3>
             </div>
 
@@ -962,11 +965,11 @@
                 <div class="add-education-container">
                     <form>
                         <label>School</label>
-                        <input ng-model="newEduSchool" type="text" class="full-row">
+                        <input ng-model="selectedEdu.school" type="text" class="full-row">
                         <label>Logo</label>
-                        <input ng-model="newEduLogo" type="text" class="full-row">
+                        <input ng-model="selectedEdu.logo" type="text" class="full-row">
                         <label>Dates Attended</label>
-                        <select ng-model="newEduYearStart">
+                        <select ng-model="selectedEdu.yearStart">
                             <option value="" selected="selected">-</option>
                             <option value="2016">2016</option>
                             <option value="2015">2015</option>
@@ -1087,7 +1090,7 @@
                             <option value="1900">1990</option>
                         </select>
                         <span>- </span>
-                        <select ng-model="newEduYearFinish">
+                        <select ng-model="selectedEdu.yearFinish">
                             <option value="" selected="selected">-</option>
                             <option value="2023">2023</option>
                             <option value="2022">2022</option>
@@ -1215,24 +1218,25 @@
                             <option value="1900">1900</option>
                         </select>
                         <label>Degree</label>
-                        <input ng-model="newEduDegree" type="text" class="full-row">
+                        <input ng-model="selectedEdu.degree" type="text" class="full-row">
                         <label>Field of Study</label>
-                        <input ng-model="newEduField" type="text" class="full-row">
+                        <input ng-model="selectedEdu.major" type="text" class="full-row">
                         <label>Grade</label>
-                        <input ng-model="newEduGrade" type="text" class="full-row">
+                        <input ng-model="selectedEdu.grade" type="text" class="full-row">
                         <label>Activities and Societies</label>
-                        <textarea ng-model="newEduActSoc" rows="3" cols="120"></textarea>
+                        <textarea ng-model="selectedEdu.actsoc" rows="3" cols="120"></textarea>
                         <label>Description</label>
-                        <textarea ng-model="newEduDescription" rows="6" cols="120"></textarea>
+                        <textarea ng-model="selectedEdu.description" rows="6" cols="120"></textarea>
                         <p class="action">
-                            <button ng-click="saveNewEdu()" id="btn-save-education" class="btn-primary">Save</button>
+                            <button ng-click="saveEdu()" id="btn-save-education" class="btn-primary">Save</button>
+                            <button ng-show="selectedIdx > -1" ng-click="removeEdu($index)" id="btn-remove-edu" class="btn-remove">Remove</button>
                             <button id="btn-cancel-add-education" class="btn-cancel">Cancel</button>
                         </p>
                     </form>
                 </div>
                 <div ng-repeat="edu in background.education" class="education-first">
                     <div class="header-left">
-                        <h4><a href="#">{{edu.school}}</a> <i class="edit-field-icon"></i></h4>
+                        <h4><a href="#">{{edu.school}}</a> <i id="edit-edu" ng-click="editEdu($index)" class="edit-field-icon"></i></h4>
                         <h5>
                             <span class="degree">{{edu.degree}},</span>
                             <a href="#" class="major">{{edu.major}}</a>

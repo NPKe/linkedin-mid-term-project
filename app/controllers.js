@@ -432,10 +432,15 @@ linkedinControllers.controller('ProfileCardCtrl', function ($scope, $http) {
 });
 
 linkedinControllers.controller('BackgroundCtrl', function ($scope, $http) {
+
+    // Get data
+
     $http.get('data/background.json').success(function (data) {
         $scope.background = data;
         $scope.summaryTexarea = $scope.background.summary.replace(/<br \/>/gi, "\n");
     });
+
+    // Summary
 
     $scope.saveSummary = function () {
         $scope.background.summary = $scope.summaryTexarea.replace(/\n/gi, "<br />");
@@ -457,6 +462,8 @@ linkedinControllers.controller('BackgroundCtrl', function ($scope, $http) {
         "11":"November",
         "12":"December"
     };
+
+    // Experience
 
     $scope.editExp = function (idx) {
         $scope.selectedExp = angular.copy($scope.background.experience[idx]);
@@ -497,29 +504,85 @@ linkedinControllers.controller('BackgroundCtrl', function ($scope, $http) {
         $scope.background.experience.splice($scope.selectedIdx, 1);
         $scope.selectedIdx = -1;
     }
-    
-    $scope.saveNewProject = function () {
-        var newProject = new Object();
-        newProject.name = $scope.newProjectName;
-        newProject.description = $scope.newProjectDescription;
-        newProject.occupation = $scope.newProjectOccupation;
-        newProject.month = $scope.newProjectMonth;
-        newProject.year = $scope.newProjectYear;
-        newProject.date = monthCode[$scope.newProjectMonth] + " - " + $scope.newProjectYear;
-        newProject.members = [];
 
-        var teamMembers = $scope.newProjectMembers.split(",");
+    // Projects
+
+    $scope.editProject = function (idx) {
+        $scope.selectedProject = angular.copy($scope.background.projects[idx]);
+        $scope.selectedProject.description = $scope.selectedProject.description.replace(/<br \/>/gi, "\n")
+
+        var mem = "";
+        for (var i = 0; i < $scope.selectedProject.members.length; i++) {
+            if (i > 0)
+                mem += ", ";
+            mem += $scope.selectedProject.members[i].name;
+        }
+        $scope.selectedProject.members = mem;
+        $scope.selectedIdx = idx;
+    };
+
+    $scope.addProject = function () {
+        $scope.selectedIdx = -1;
+        $scope.selectedProject = null;
+    }
+
+    $scope.saveProject = function () {
+        var project = new Object();
+        project.name = $scope.selectedProject.name;
+        project.description = $scope.selectedProject.description.replace(/\n/gi, "<br />");
+        project.occupation = $scope.selectedProject.occupation;
+        project.month = $scope.selectedProject.month;
+        project.year = $scope.selectedProject.year;
+        project.date = monthCode[project.month] + " - " + project.year;
+        project.members = [];
+
+        var teamMembers = $scope.selectedProject.members.split(",");
         for (var i = 0; i < teamMembers.length; i++)
         {
             var mem = new Object();
             mem.name = teamMembers[i];
             mem.headline = "Member";
             mem.avatar = "images/ghost_person.png";
-            newProject.members .push(mem);
+            project.members.push(mem);
         }
 
-        $scope.background.projects.push(newProject);
+
+        if ($scope.selectedIdx != -1)
+            $scope.background.projects[$scope.selectedIdx] = project;
+        else
+            $scope.background.projects.push(project);
     };
+
+    $scope.removeProject = function () {
+        $scope.background.projects.splice($scope.selectedIdx, 1);
+        $scope.selectedIdx = -1;
+    }
+
+    // Skill
+
+    $scope.editTopSkill = false;
+    $scope.editMoreSkill = false;
+
+    $scope.editSkill = function (top) {
+        if(top)
+            $scope.editTopSkill = !$scope.editTopSkill;
+        else
+            $scope.editMoreSkill = !$scope.editMoreSkill;
+    }
+
+    $scope.removeSkill = function (idx, name, top) {
+        $scope.background.skill.sort(function (a, b) {
+            return b.endorseCount - a.endorseCount;
+        });
+        
+        if (!top)
+            idx += 10;
+
+        while($scope.background.skill[idx].name != name)
+            idx++;
+
+        $scope.background.skill.splice(idx, 1);
+    }
 
     $scope.saveNewSkill = function () {
         var newSkill = new Object();
@@ -529,19 +592,33 @@ linkedinControllers.controller('BackgroundCtrl', function ($scope, $http) {
         $scope.background.skill.push(newSkill);
     };
 
-    $scope.saveNewEdu = function () {
-        var newEdu = new Object();
-        newEdu.school = $scope.newEduSchool;
-        newEdu.degree = $scope.newEduDegree;
-        newEdu.major = $scope.newEduField;
-        newEdu.yearStart = $scope.newEduYearStart;
-        newEdu.yearFinish = $scope.newEduYearFinish;
-        newEdu.date = newEdu.yearStart + " - " + newEdu.yearFinish;
-        newEdu.description = $scope.newEduDescription.replace(/\n/gi, "<br />");;
-        newEdu.actsoc = $scope.newEduActSoc;
-        newEdu.logo = $scope.newEduLogo;
 
-        $scope.background.education.push(newEdu);
-        newEdu = null;
+    // Education
+
+    $scope.editEdu = function (idx) {
+        $scope.selectedIdx = idx;
+        $scope.selectedEdu = angular.copy($scope.background.education[idx]);
+    }
+
+    $scope.addEdu = function () {
+        $scope.selectedIdx = -1;
+        $scope.selectedEdu = null;
+    }
+
+    $scope.removeEdu = function (idx) {
+        $scope.background.education.splice(idx, 1);
+        $scope.selectedIdx = -1;
+    }
+
+    $scope.saveEdu = function () {
+        var edu = new Object();
+        edu = $scope.selectedEdu;
+        edu.date = edu.yearStart + " - " + edu.yearFinish;
+        edu.description = edu.description.replace(/\n/gi, "<br />");;
+
+        if ($scope.selectedIdx != -1)
+            $scope.background.education[$scope.selectedEdu] = edu;
+        else
+            $scope.background.education.push(edu);
     };
 });

@@ -118,14 +118,41 @@ $(document).ready(function(){
     $(document).on("click", ".btn-remove", function(){
         $(".add-position-container").hide();
     });
-
-
     
     $("#btn-add-project").click(function(){
         $(".add-project-container").show();
         $('html,body').animate({
-                scrollTop: $(".add-position-container").offset().top},
+                scrollTop: $("#background-project-container").offset().top},
             'fast');
 
     });
+
+    $(document).on("click", "#edit-project", function(){
+        $(".add-project-container").show();
+        $('html,body').animate({
+                scrollTop: $("#background-project-container").offset().top},
+            'fast');
+    });
+
+    $(document).on("click", "#btn-remove-project", function(){
+        $(".add-project-container").hide();
+        $('html,body').animate({
+                scrollTop: $("#background-project-container").offset().top},
+            'fast');
+    });
+
+    $(document).on("click", "#edit-edu", function(){
+        $(".add-education-container").show();
+        $('html,body').animate({
+                scrollTop: $("#background-education-container").offset().top},
+            'fast');
+    });
+
+    $(document).on("click", "#btn-remove-edu", function(){
+        $(".add-education-container").hide();
+        $('html,body').animate({
+                scrollTop: $("#background-education-container").offset().top},
+            'fast');
+    });
+
 });
