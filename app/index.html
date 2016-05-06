@@ -24,11 +24,25 @@
     <div id="cover-photo"></div>
 </header>
 
-<div id="container">
-    <div ng-controller="ProfileCardCtrl" class="top-profile-card">
+<div ng-controller="BackgroundCtrl" id="container">
+    <div class="top-profile-card">
         <div class="profile-card">
             <div class="proflie-picture">
-                <img ng-src="{{profileCard.avatar}}">
+                <img ng-src="{{background.profile.avatar}}">
+                <div class="edit-avatar">
+                    <img ng-click="editAvatar()" id="edit-avatar-icon" width="10px" height="10px" src="images/pencil-edit-button.png">
+                </div>
+                <div class="pop-up pop-up-edit-avatar">
+                    <strong class="hover-form-header"></strong>
+                    <form>
+                        <label>Avatar URL</label>
+                        <input ng-model="newAvatarURL" type="text">
+                        <p class="action">
+                            <button class="btn-primary" ng-click="saveAvatar()">Save</button>
+                            <button class="btn-cancel">Cancel</button>
+                        </p>
+                    </form>
+                </div>
             </div>
 
             <div class="profile-overview">
@@ -37,13 +51,13 @@
                         <div class="account-icon"></div>
 
                         <div class="basic-info">
-                            <h1 class="h1-name">{{profileCard.firstName + ' ' + profileCard.lastName}}
+                            <h1 class="h1-name">{{background.profile.firstName + ' ' + background.profile.lastName}}
                                 <div id="pop-up-edit-name" class="pop-up">
                                     <strong class="hover-form-header"></strong>
                                     <form>
                                         <label>Name</label>
-                                        <input ng-model="newFirstName" ng-value="profileCard.firstName" type="text">
-                                        <input ng-model="newLastName" ng-value="profileCard.lastName" type="text">
+                                        <input ng-model="newFirstName" type="text">
+                                        <input ng-model="newLastName" type="text">
                                         <br>
 
                                         <p class="action">
@@ -52,17 +66,17 @@
                                         </p>
                                     </form>
                                 </div>
-                                <i class="edit-field-icon edit-name"></i>
+                                <i ng-click="editName()" class="edit-field-icon edit-name"></i>
                             </h1>
 
                             <span class="headline-title">
-                                {{profileCard.headline}}
-                                <i class="edit-field-icon edit-headline"></i>
+                                {{background.profile.headline}}
+                                <i ng-click="editHeadline()" class="edit-field-icon edit-headline"></i>
                                 <div id="pop-up-edit-headline" class="pop-up">
                                     <strong class="hover-form-header"></strong>
                                     <form>
                                         <label>Your professional headline</label>
-                                        <input ng-model="newHeadline" ng-value="profileCard.headline" class="headline" type="text">
+                                        <input ng-model="newHeadline" class="headline" type="text">
                                         <p class="action">
                                             <button ng-click="saveHeadline()" class="btn-primary">Save</button>
                                             <button class="btn-cancel">Cancel</button>
@@ -72,9 +86,9 @@
                         </span>
                         <div class="location-container">
                             <span class="locaindu">
-                                <a href="#" class="location">{{profileCard.location}}</a> |
-                                <a href="#" class="industry">{{profileCard.industry}}</a>
-                                <i class="edit-field-icon edit-location-industry"></i>
+                                <a href="#" class="location">{{background.profile.location}}</a> |
+                                <a href="#" class="industry">{{background.profile.industry}}</a>
+                                <i ng-click="editLocation()" class="edit-field-icon edit-location-industry"></i>
                                 <div id="pop-up-edit-location-industry" class="pop-up">
                                     <strong class="hover-form-header"></strong>
                                     <form>
@@ -526,7 +540,7 @@
                         <td>
                             <ul>
                                 <li>
-                                    <a href="#">{{background.education[0].school}}</a>
+                                    <a ng-bind="background.education[0].school" href="#"></a>
                                 </li>
                                 <i class="edit-field-icon edit-education"></i>
                             </ul>
@@ -546,13 +560,13 @@
                     </div>
 
                     <div class="connect-action">
-                        <p>Know {{profileCard.firstName}}?</p>
+                        <p>Know {{background.profile.firstName}}?</p>
                         <a href="#">Connect</a>
                     </div>
                 </div>
 
                 <div class="follower-count">
-                    <strong>{{profileCard.followers | number:0}}</strong>followers</div>
+                    <strong>{{background.profile.followers | number:0}}</strong>followers</div>
             </div>
         </div>
     </div>
@@ -561,12 +575,12 @@
             <tbody>
             <tr class="twitter">
                 <th>Twitter</th>
-                <td><a href="#">{{profileCard.twitter}}</a>
+                <td><a href="#">{{background.profile.twitter}}</a>
                 </td>
             </tr>
             <tr class="website">
                 <th>Website</th>
-                <td><a href="#">{{profileCard.website}}</a>
+                <td><a href="#">{{background.profile.website}}</a>
                 </td>
             </tr>
             </tbody>
@@ -574,8 +588,8 @@
     </div>
     <div class="profile-card-extra">
         <div class="public-profile">
-            <a class="view-public-profile" href="https://www.linkedin.com/in/{{profileCard.publicProfile}}">
-                https://www.linkedin.com/in/{{profileCard.publicProfile}}
+            <a class="view-public-profile" href="https://www.linkedin.com/in/{{background.profile.publicProfile}}">
+                https://www.linkedin.com/in/{{background.profile.publicProfile}}
             </a>
         </div>
         <div class="contact-info">
@@ -584,16 +598,19 @@
     </div>
 </div>
 
-<div ng-controller="BackgroundCtrl" id="background" class="profile-background">
+<div  id="background" class="profile-background">
     <h2>Background</h2>
     <div class="background-content">
         <div id="background-summary-container" class="background-section">
             <div class="summary-header">
-                <h3>Summary</h3>
+                <h3>
+                    Summary
+                    <i class="edit-field-icon edit-paragraph edit-summary"></i>
+                </h3>
             </div>
             <div class="summary-content">
                 <p ng-bind-html="background.summary"></p>
-                <i class="edit-field-icon edit-paragraph edit-summary"></i>
+
                 <div class="edit-summary-container">
                     <form>
                         <label>Summary</label>
@@ -674,7 +691,7 @@
                     <div class="experience-header">
                         <div class="header-left">
                             <h4><a href="#">{{exp.title}}</a> <i  ng-click="editExp($index)" class="edit-field-icon edit-exp"></i> </h4>
-                            <h5><a href="#">{{exp.company}}</a> <i ng-click="editExp($index)" class="edit-field-icon edit-exp"></i></h5>
+                            <h5><a href="#">{{exp.company}}</a></h5>
 
                             <div class="experience-date-location">
                                         <span class="experience-date">
@@ -683,7 +700,6 @@
                                         <span ng-if="exp.location" class="experience-location">
                                        | {{exp.location}}
                                     </span>
-                                <i ng-click="editExp($index)" class="edit-field-icon edit-exp"></i>
                             </div>
                         </div>
                         <div class="header-right">
@@ -694,7 +710,6 @@
                     </div>
                     <div class="experience-summary">
                         <p ng-bind-html="exp.description"></p>
-                        <i ng-click="editExp($index)" class="edit-field-icon edit-exp edit-paragraph-project"></i>
                     </div>
                 </div>
             </div>
@@ -871,11 +886,11 @@
                 </div>
                 <div ng-repeat="project in background.projects" class="project-view">
                     <h4>{{project.name}} <i id="edit-project" ng-click="editProject($index)" class="edit-field-icon"></i></h4>
-                    <h5>{{project.date}} <i class="edit-field-icon"></i></h5>
-                    <p ng-bind-html="project.description"> <i class="edit-field-icon"></i>
+                    <h5>{{project.date}} </h5>
+                    <p ng-bind-html="project.description">
                     </p>
                     <div class="project-team">
-                        <span>{{project.members.length}} team members, including: <i class="edit-field-icon"></i></span>
+                        <span>{{project.members.length}} team members, including:</span>
                         <ul class="team-list">
                             <li ng-repeat="mem in project.members" class="project-member">
                                 <a href="#"><img ng-src="{{mem.avatar}}">
@@ -898,14 +913,14 @@
             </div>
 
             <div class="volunteering-opportunities">
-                <h4>Opportunities Jeff is looking for:</h4>
+                <h4>Opportunities {{background.profile.firstName}} is looking for:</h4>
                 <ul>
                     <li ng-repeat="opportunity in background.volunteering.opportunities">{{opportunity}}</li>
                 </ul>
             </div>
 
             <div class="volunteering-interests">
-                <h4>Causes Josh cares about:</h4>
+                <h4>Causes {{background.profile.firstName}} cares about:</h4>
                 <ul>
                     <li ng-repeat="interest in background.volunteering.interests">{{interest}}</li>
                 </ul>
@@ -941,7 +956,7 @@
                     </li>
                 </ul>
 
-                <h5>Jeff also knows about... <i ng-click="editSkill(false)" class="edit-field-icon"></i></h5>
+                <h5>{{background.profile.firstName}} also knows about... <i ng-click="editSkill(false)" class="edit-field-icon"></i></h5>
                 <ul class="skills-section more-skill">
                     <li ng-repeat="skill in background.skill | orderBy:'endorseCount':true | limitTo:background.skill.length : 10">
                                 <span class="skill-pill">
@@ -1240,9 +1255,9 @@
                         <h5>
                             <span class="degree">{{edu.degree}},</span>
                             <a href="#" class="major">{{edu.major}}</a>
-                            <span class="degree">, {{edu.grade}} <i class="edit-field-icon"></i></span>
+                            <span class="degree">, {{edu.grade}} </span>
                         </h5>
-                        <span class="education-date">{{edu.date}}</span> <i class="edit-field-icon"></i>
+                        <span class="education-date">{{edu.date}}</span>
 
                     </div>
 

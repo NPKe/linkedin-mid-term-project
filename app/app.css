@@ -117,6 +117,11 @@ a:hover
   float: left;
   width: 240px;
   height: 240px;
+position: relative;
+}
+
+.proflie-picture:hover {
+   
 }
 
 .profile-overview {
@@ -148,8 +153,7 @@ h1 {
 
 h1:hover > .edit-field-icon::before
 {
-    display: inline-block;
-    vertical-align: top;
+    
 }
 
 .headline-title {
@@ -846,6 +850,7 @@ h5 a {
 .edit-field-icon::before:hover {
     color: #fff!important;
     background: #00A0DC!important;
+    cursor: pointer;
 }
 
 .edit-field-icon:hover .edit-field-icon::before {
@@ -870,9 +875,6 @@ h5 a {
 }
 
 .edit-paragraph {
-    position: absolute;
-    top: 0px;
-    left: 100%;
 }
 
 .edit-paragraph-project {
@@ -931,13 +933,13 @@ h5 a {
     padding: 15px;
     position: absolute;
     background: #fff;
-    display: none;
     border-color: #ededed #c9c9c9 #a4a4a4;
     border-style: solid;
     border-width: 1px;
     font-size: 13px;
     font-weight: normal;
     z-index: 99999;
+    display: none;
 }
 
 .pop-up div 
@@ -1137,4 +1139,39 @@ textarea {
 .remove-skill:hover {
     color: #0073b2;
     cursor: pointer;
+}
+
+.edit-avatar {
+    position: absolute;
+    top: 0px;
+    height: 240px;
+    width: 240px;
+}
+
+.edit-avatar #edit-avatar-icon {
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    top: 10px;
+    left: 210px;
+    display: none;
+}
+
+.edit-avatar:hover > #edit-avatar-icon {
+    display: block;
+}
+
+.pop-up-edit-avatar {
+    position: absolute;
+    z-index: 90000;
+    top: 5px;
+    left: 250px;
+    width: 250px;
+    background: #fff;
+    opacity: 1;
+}
+
+.pop-up-edit-avatar input 
+{
+    width: 220px!important;
 }

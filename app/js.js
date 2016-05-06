@@ -66,6 +66,10 @@ $(document).ready(function(){
         $(".add-skill-container").show();
     });
     
+    $(".edit-avatar").click(function(){
+        $(".pop-up-edit-avatar").show();
+    });
+    
     $("#btn-cancel-add-skill").click(function(){
         $(".add-skill-container").hide();
     });
@@ -111,7 +115,7 @@ $(document).ready(function(){
     $(document).on("click", ".edit-exp", function(){
         $(".add-position-container").show();
         $('html,body').animate({
-                scrollTop: $("#background-experience-container").offset().top+90},
+                scrollTop: $("#background-experience-container").offset().top+80},
             'fast');
     });
 
@@ -154,5 +158,5 @@ $(document).ready(function(){
                 scrollTop: $("#background-education-container").offset().top},
             'fast');
     });
-
+    
 });

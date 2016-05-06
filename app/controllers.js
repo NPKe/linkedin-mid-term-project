@@ -3,25 +3,47 @@
  */
 var linkedinControllers = angular.module('linkedinControllers', []);
 
-linkedinControllers.controller('ProfileCardCtrl', function ($scope, $http) {
-    $http.get('data/profilecard.json').success(function (data) {
-        $scope.profileCard = data;
-    });
+linkedinControllers.controller('BackgroundCtrl', function ($scope, $http) {
+
+    // Get data
 
     $http.get('data/background.json').success(function (data) {
         $scope.background = data;
+        $scope.summaryTexarea = $scope.background.summary.replace(/<br \/>/gi, "\n");
     });
     
+    // Profile card
+
+    $scope.editAvatar = function () {
+        $scope.newAvatarURL = angular.copy($scope.background.profile.avatar);
+    }
+
+    $scope.saveAvatar = function () {
+        $scope.background.profile.avatar = $scope.newAvatarURL;
+    }
+    
+    $scope.editName = function () {
+        $scope.newFirstName = angular.copy($scope.background.profile.firstName);
+        $scope.newLastName = angular.copy($scope.background.profile.lastName);
+    }
+
+    $scope.editHeadline = function () {
+        $scope.newHeadline = angular.copy($scope.background.profile.headline);
+    }
+
+    $scope.editLocation = function () {
+        $scope.newCountry = "vn";
+        $scope.newIndustry = "4";
+    }
+
     $scope.saveName = function() {
-        $scope.profileCard.firstName = $scope.newFirstName;
-        $scope.profileCard.lastName = $scope.newLastName;
+        $scope.background.profile.firstName = $scope.newFirstName;
+        $scope.background.profile.lastName = $scope.newLastName;
     };
 
     $scope.saveHeadline = function() {
-        $scope.profileCard.headline = $scope.newHeadline;
+        $scope.background.profile.headline = $scope.newHeadline;
     };
-
-
 
     $scope.countryCode = {
         "us": "United States",
@@ -426,19 +448,9 @@ linkedinControllers.controller('ProfileCardCtrl', function ($scope, $http) {
     };
 
     $scope.saveCountryIndustry = function () {
-        $scope.profileCard.location = $scope.countryCode[$scope.newCountry];
-        $scope.profileCard.industry = $scope.industryCode[$scope.newIndustry];
+        $scope.background.profile.location = $scope.countryCode[$scope.newCountry];
+        $scope.background.profile.industry = $scope.industryCode[$scope.newIndustry];
     };
-});
-
-linkedinControllers.controller('BackgroundCtrl', function ($scope, $http) {
-
-    // Get data
-
-    $http.get('data/background.json').success(function (data) {
-        $scope.background = data;
-        $scope.summaryTexarea = $scope.background.summary.replace(/<br \/>/gi, "\n");
-    });
 
     // Summary
 
@@ -498,6 +510,8 @@ linkedinControllers.controller('BackgroundCtrl', function ($scope, $http) {
             $scope.background.experience[$scope.selectedIdx] = exp;
         else 
             $scope.background.experience.push(exp);
+
+        $scope.selectedExp = null;
     };
 
     $scope.removeExp = function () {
@@ -551,6 +565,8 @@ linkedinControllers.controller('BackgroundCtrl', function ($scope, $http) {
             $scope.background.projects[$scope.selectedIdx] = project;
         else
             $scope.background.projects.push(project);
+
+        $scope.selectedProject = null;
     };
 
     $scope.removeProject = function () {
@@ -616,9 +632,11 @@ linkedinControllers.controller('BackgroundCtrl', function ($scope, $http) {
         edu.date = edu.yearStart + " - " + edu.yearFinish;
         edu.description = edu.description.replace(/\n/gi, "<br />");;
 
-        if ($scope.selectedIdx != -1)
-            $scope.background.education[$scope.selectedEdu] = edu;
+        if ($scope.selectedIdx > -1)
+            $scope.background.education[$scope.selectedIdx] = edu;
         else
             $scope.background.education.push(edu);
+
+        $scope.selectedEdu = null;
     };
 });
