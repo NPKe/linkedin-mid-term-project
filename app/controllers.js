@@ -3,14 +3,17 @@
  */
 var linkedinControllers = angular.module('linkedinControllers', []);
 
-linkedinControllers.controller('BackgroundCtrl', function ($scope, $http) {
+linkedinControllers.controller('BackgroundCtrl', function ($scope, $http, $firebaseObject) {
 
     // Get data
+    var ref = new Firebase("https://linkedin-1312276.firebaseio.com");
+    // download the data into a local object
+    $scope.background = $firebaseObject(ref);
 
-    $http.get('data/background.json').success(function (data) {
-        $scope.background = data;
-        $scope.summaryTexarea = $scope.background.summary.replace(/<br \/>/gi, "\n");
-    });
+    //$http.get('data/background.json').success(function (data) {
+    //    $scope.background = data;
+    //    $scope.summaryTexarea = $scope.background.summary.replace(/<br \/>/gi, "\n");
+    //});
     
     // Profile card
 
@@ -621,8 +624,8 @@ linkedinControllers.controller('BackgroundCtrl', function ($scope, $http) {
         $scope.selectedEdu = null;
     }
 
-    $scope.removeEdu = function (idx) {
-        $scope.background.education.splice(idx, 1);
+    $scope.removeEdu = function () {
+        $scope.background.education.splice($scope.selectedIdx, 1);
         $scope.selectedIdx = -1;
     }
 

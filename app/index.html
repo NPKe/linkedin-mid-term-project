@@ -94,7 +94,7 @@
                                     <form>
                                         <label>Country</label>
                                         <select ng-model="newCountry">
-                                            <option selected="selected" value="">Choose country...</option>
+                                            <option value="">Choose country...</option>
                                             <option value="us">United States</option>
                                             <option value="af">Afghanistan</option>
                                             <option value="ax">Aland Islands</option>
@@ -704,7 +704,7 @@
                         </div>
                         <div class="header-right">
                             <h5 ng-if="exp.logo" class="experience-logo">
-                                <a href="#"><img ng-src="{{exp.logo}}"></a>
+                                <a href="#"><img class="experience-logo" ng-src="{{exp.logo}}"></a>
                             </h5>
                         </div>
                     </div>
@@ -1244,7 +1244,7 @@
                         <textarea ng-model="selectedEdu.description" rows="6" cols="120"></textarea>
                         <p class="action">
                             <button ng-click="saveEdu()" id="btn-save-education" class="btn-primary">Save</button>
-                            <button ng-show="selectedIdx > -1" ng-click="removeEdu($index)" id="btn-remove-edu" class="btn-remove">Remove</button>
+                            <button ng-show="selectedIdx > -1" ng-click="removeEdu()" id="btn-remove-edu" class="btn-remove">Remove</button>
                             <button id="btn-cancel-add-education" class="btn-cancel">Cancel</button>
                         </p>
                     </form>
@@ -1286,6 +1286,8 @@
 <script src="bower_components/angular-route/angular-route.js"></script>
 <script src="bower_components/jquery/jquery.min.js"></script>
 <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+<script src="https://cdn.firebase.com/js/client/2.2.1/firebase.js"></script>
+<script src="bower_components/angularfire/dist/angularfire.min.js"></script>
 <script src="app.js"></script>
 <script src="js.js"></script>
 <script src="controllers.js"></script>

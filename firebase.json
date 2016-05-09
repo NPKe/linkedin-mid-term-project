@@ -1,5 +1,5 @@
 {
-  "firebase": "linkedin-lite",
+  "firebase": "linkedin-1312276",
   "public": "app",
   "ignore": [
     "firebase.json",

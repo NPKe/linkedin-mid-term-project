@@ -5,7 +5,7 @@
     "lastName": "Nguyen Phu",
     "headline": "CEO at LinkedIn",
     "location": "Vietnam",
-    "industry": "SComputer Software",
+    "industry": "Computer Software",
     "twitter": "kenpstr",
     "website": "https://kenp.io",
     "followers": 1011011,
@@ -86,12 +86,16 @@
     {
       "name": "BBDO Migration",
       "date": "November 2014 – March 2015",
+	  "monthStart": "11",
+	  "yearStart": "2014",
+	  "monthFinish": "3",
+	  "yearFinish": "2015",
       "description": "This project is to migration current system on Sharepoint 2007, 2010 to Sharepoint 2013.",
       "members": [
         {
           "name": "Ke Nguyen Phu",
           "headline": "Executive Chairman at The Jack Welch Management Institute",
-          "avatar": "images/team-member-01.jpg"
+          "avatar": "images/ghost_person.png"
         },
         {
           "name": "Nguyen Anh Linh",
@@ -119,12 +123,16 @@
     {
       "name": "Tripwire",
       "date": "October 2005 – April 2007",
+	  "monthStart": "10",
+	  "yearStart": "2005",
+	  "monthFinish": "4",
+	  "yearFinish": "2007",
       "description": "This project is to design and develop marketing management system using SharePoint for a German companies to provide a complete solution for marketing for many customers like Vodafone, Lufthansa, Monster, … ",
       "members": [
         {
           "name": "Ke Nguyen Phu",
-          "headline": "Executive Chairman at The Jack Welch Management Institute",
-          "avatar": "images/team-member-01.jpg"
+          "headline": "",
+          "avatar": "images/ghost_person.png"
         },
         {
           "name": "Luong Thi thu Hang",
@@ -147,16 +155,20 @@
     {
       "name": "ORT",
       "date": "January 2014 – September 2014",
-      "description": "",
+	  "monthStart": "1",
+	  "yearStart": "2014",
+	  "monthFinish": "9",
+	  "yearFinish": "2014",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas consectetur orci at mi tempus malesuada. Ut hendrerit eget risus at maximus. Fusce malesuada mi vel fringilla tincidunt. ",
       "members": [
         {
           "name": "Ke Nguyen Phu",
-          "headline": "Executive Chairman at The Jack Welch Management Institute",
-          "avatar": "images/team-member-01.jpg"
+          "headline": "",
+          "avatar": "images/ghost_person.png"
         },
         {
           "name": "Hung Cao",
-          "headline": "SDE2 - Contractor at Microsoft",
+          "headline": "",
           "avatar": "images/team-member-02.jpg"
         }
       ]

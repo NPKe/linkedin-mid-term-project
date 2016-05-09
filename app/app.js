@@ -5,5 +5,6 @@ angular.module('linkedinLite', [
   'ngRoute',
   'linkedinControllers',
   'ngSanitize',
-  'linkedinLite.version'
+  'linkedinLite.version',
+  'firebase'
 ]);
