@@ -1,0 +1,15 @@
+<div ng-controller="LoginCtrl" class='container'>
+    <div class='login-form'>
+        <form>
+            <label for="email">Email</label><br />
+            <input ng-model="email" type="text" placeholder="Email" /><br />
+
+            <label for="password">Password</label><br />
+            <input ng-model="password" type="password" placeholder="Password" /><br />
+
+            <button ng-click="signUp()">Sign Up</button>
+            <span>or</span>
+            <button ng-click="signIn()">Sign In</button>
+        </form>
+    </div>
+</div>

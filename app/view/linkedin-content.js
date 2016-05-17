@@ -1,9 +1,13 @@
-/**
- * Created by Ke Nguyen Phu on 4/26/2016.
- */
-var linkedinControllers = angular.module('linkedinControllers', []);
+var linkedin = angular.module('linkedinLite.content', ['ngRoute']);
 
-linkedinControllers.controller('BackgroundCtrl', function ($scope, $http, $firebaseObject) {
+linkedin.config(['$routeProvider', function ($routeProvider) {
+    $routeProvider.when('/linkedin-profile', {
+        templateUrl: 'view/linkedin-content.html',
+        controller: 'LinkedInCtrl'
+    });
+}]);
+
+linkedin.controller('LinkedInCtrl', function ($scope, $http, $firebaseObject) {
 
     // Get data
     var ref = new Firebase("https://linkedin-1312276.firebaseio.com");
@@ -14,7 +18,7 @@ linkedinControllers.controller('BackgroundCtrl', function ($scope, $http, $fireb
     //    $scope.background = data;
     //    $scope.summaryTexarea = $scope.background.summary.replace(/<br \/>/gi, "\n");
     //});
-    
+
     // Profile card
 
     $scope.editAvatar = function () {
@@ -24,7 +28,7 @@ linkedinControllers.controller('BackgroundCtrl', function ($scope, $http, $fireb
     $scope.saveAvatar = function () {
         $scope.background.profile.avatar = $scope.newAvatarURL;
     }
-    
+
     $scope.editName = function () {
         $scope.newFirstName = angular.copy($scope.background.profile.firstName);
         $scope.newLastName = angular.copy($scope.background.profile.lastName);
@@ -511,7 +515,7 @@ linkedinControllers.controller('BackgroundCtrl', function ($scope, $http, $fireb
 
         if ($scope.selectedIdx != -1)
             $scope.background.experience[$scope.selectedIdx] = exp;
-        else 
+        else
             $scope.background.experience.push(exp);
 
         $scope.selectedExp = null;
@@ -593,7 +597,7 @@ linkedinControllers.controller('BackgroundCtrl', function ($scope, $http, $fireb
         $scope.background.skill.sort(function (a, b) {
             return b.endorseCount - a.endorseCount;
         });
-        
+
         if (!top)
             idx += 10;
 

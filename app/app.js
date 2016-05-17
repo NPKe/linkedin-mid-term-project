@@ -1,10 +1,15 @@
 'use strict';
 
-// Declare app level module which depends on views, and components
-angular.module('linkedinLite', [
+var app = angular.module('linkedinLite', [
   'ngRoute',
-  'linkedinControllers',
   'ngSanitize',
-  'linkedinLite.version',
-  'firebase'
+  'firebase',
+  'linkedinLite.login',
+  'linkedinLite.content'
 ]);
+
+app.config(['$routeProvider', function ($routeProvider) {
+  $routeProvider.otherwise({
+    redirectTo: '/signin'
+  });
+}]);
