@@ -1,23 +1,31 @@
-var linkedin = angular.module('linkedinLite.content', ['ngRoute']);
+var linkedin = angular.module('linkedinLite.profile', ['ngRoute']);
 
 linkedin.config(['$routeProvider', function ($routeProvider) {
     $routeProvider.when('/linkedin-profile', {
-        templateUrl: 'view/linkedin-content.html',
-        controller: 'LinkedInCtrl'
+        templateUrl: 'view/linkedin-profile.html',
+        controller: 'ProfileCtrl'
     });
 }]);
 
-linkedin.controller('LinkedInCtrl', function ($scope, $http, $firebaseObject) {
+linkedin.controller('ProfileCtrl', function ($scope, $http, $firebaseObject) {
 
     // Get data
     var ref = new Firebase("https://linkedin-1312276.firebaseio.com");
-    // download the data into a local object
+
+    if (!ref.getAuth())
+    {
+        window.location = '#sign-in';
+        return;
+    }
+
     $scope.background = $firebaseObject(ref);
 
-    //$http.get('data/background.json').success(function (data) {
-    //    $scope.background = data;
-    //    $scope.summaryTexarea = $scope.background.summary.replace(/<br \/>/gi, "\n");
-    //});
+
+    $scope.signOut = function () {
+        ref.unauth();
+        console.log("User has just logged out");
+        window.location = '#sign-in';
+    }
 
     // Profile card
 

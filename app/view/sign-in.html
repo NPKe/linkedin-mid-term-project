@@ -1,0 +1,22 @@
+<div ng-controller="SignInCtrl" class='container'>
+    
+    <div class='login-form'>
+        <div class="logo">
+            <img width="110px" ng-src="images/linkedin-logo.png"/>
+        </div>
+        <form>
+            <label ng-click="checkAuth()" for="email">Email</label>
+            <input ng-model="email" type="text" placeholder="Email" /><br />
+
+            <label ng-click="signOut()" for="password">Password</label>
+            <input ng-model="password" type="password" placeholder="Password" /><br />
+
+            <button class="btn-primary" ng-click="signIn()">Sign In</button>
+            <span>or</span>
+            <button class="btn-cancel" ng-click="signUp()">Sign Up</button>
+        </form>
+        <div class='message-box'>
+            <p ng-bind-html="message"></p>
+        </div>
+    </div>
+</div>

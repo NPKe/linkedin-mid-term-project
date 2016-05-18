@@ -3,7 +3,7 @@ $(document).ready(function(){
         $("#contact-info-container").slideToggle();
     });
     
-    $(".edit-name").click(function(){
+    $(document).on("click", ".edit-name", function(){
         $("#pop-up-edit-name").show();
     });
     

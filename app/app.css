@@ -105,7 +105,7 @@ a:hover
   width: 974px;
   margin: auto;
   position: relative;
-  top: -190px;
+  top: 0px;
   overflow: hidden;
 }
 
@@ -321,9 +321,8 @@ tbody {
 
 strong {
   font-weight: bold;
-  display: block;
   color: #333;
-  font-size: 18px;
+  font-size: 12px;
   line-height: 14px;
 }
 
@@ -990,7 +989,7 @@ label {
     padding-top: 5px;
 }
 
-form input[type="text"], select {
+form input[type="text"], form input[type="password"], select {
     width: 100px;
     margin-top: 6px;
     box-shadow: 0 0 3px rgba(0,0,0,0.1) inset;
@@ -1175,4 +1174,56 @@ textarea {
 .pop-up-edit-avatar input 
 {
     width: 220px!important;
+}
+
+.login-form input {
+    width: 300px!important;
+}
+
+.login-form {
+    background: #fff;
+    padding: 20px 30px;
+    margin: auto;
+    width: 320px;
+    margin-top: 100px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.login-form > form > button {
+    margin-top: 10px;
+}
+
+.message-box {
+    padding: 20px 0px 10px;
+    color: #434649;
+}
+
+.naigation-bar {
+    background-color: #3f3f3f;
+    background-image: -webkit-linear-gradient(top, #696969 0%,#3f3f3f 100%);
+    overflow: hidden;
+    margin-bottom: 5px;
+}
+
+.naigation-bar > button {
+    float: right;
+}
+
+.btn-sign-out {
+    border: none;
+    background: transparent;
+    padding: 10px 20px;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+}
+
+.btn-sign-out:hover {
+    text-decoration: underline;
+}
+
+.logo {
+    text-align: center;
+    padding: 0px 105px;
 }

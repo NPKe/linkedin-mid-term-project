@@ -1,8 +1,8 @@
-<header>
-    <div id="cover-photo"></div>
-</header>
-
-<div ng-controller="LinkedInCtrl" id="container">
+<div ng-controller="ProfileCtrl" id="container">
+    <nav class="naigation-bar">
+        <button ng-click="signOut()" class="btn-sign-out">Sign Out</button>
+    </nav>
+    
     <div class="top-profile-card">
         <div class="profile-card">
             <div class="proflie-picture">
@@ -490,7 +490,7 @@
                     <table class="overview">
                         <tbody>
                         <tr>
-                            <td class="overview-time">Current</td>
+                            <td ng-click="checkAuth()" class="overview-time">Current</td>
                             <td>
                                 <ul>
                                     <li ng-repeat="exp in background.experience | limitTo:3">
@@ -502,7 +502,7 @@
                         </tr>
 
                         <tr>
-                            <td class="overview-time">Previous</td>
+                            <td ng-click="signOut()" class="overview-time">Previous</td>
                             <td>
                                 <ul>
                                     <li ng-repeat="exp in background.experience | limitTo:3:3">

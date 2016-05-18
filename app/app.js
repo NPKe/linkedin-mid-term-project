@@ -4,12 +4,12 @@ var app = angular.module('linkedinLite', [
   'ngRoute',
   'ngSanitize',
   'firebase',
-  'linkedinLite.login',
-  'linkedinLite.content'
+  'linkedinLite.signIn',
+  'linkedinLite.profile'
 ]);
 
 app.config(['$routeProvider', function ($routeProvider) {
   $routeProvider.otherwise({
-    redirectTo: '/signin'
+    redirectTo: '/sign-in'
   });
 }]);
