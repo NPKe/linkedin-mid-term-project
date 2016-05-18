@@ -10,7 +10,7 @@ linkedin.config(['$routeProvider', function ($routeProvider) {
 linkedin.controller('ProfileCtrl', function ($scope, $http, $firebaseObject) {
 
     // Get data
-    var ref = new Firebase("https://linkedin-1312276.firebaseio.com");
+    var ref = new Firebase("https://1312276-auth.firebaseio.com");
 
     if (!ref.getAuth())
     {

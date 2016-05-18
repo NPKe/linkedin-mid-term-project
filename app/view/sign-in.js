@@ -9,7 +9,7 @@ signIn.config(['$routeProvider', function($routeProvider) {
 
 signIn.controller('SignInCtrl', function ($scope, $location) {
 
-    var ref = new Firebase('https://linkedin-1312276.firebaseio.com');
+    var ref = new Firebase('https://1312276-auth.firebaseio.com');
 
     if (ref.getAuth())
     {
