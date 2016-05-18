@@ -11,6 +11,12 @@ signIn.controller('SignInCtrl', function ($scope, $location) {
 
     var ref = new Firebase('https://linkedin-1312276.firebaseio.com');
 
+    if (ref.getAuth())
+    {
+        window.location = "#linkedin-profile";
+        return;
+    }
+
     $scope.message = "Please <strong>Sign In</strong> to view this page. If you don't have an account please <strong>Sign Up</strong>.";
 
     $scope.signUp = function () {

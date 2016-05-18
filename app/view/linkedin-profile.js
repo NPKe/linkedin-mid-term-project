@@ -21,6 +21,7 @@ linkedin.controller('ProfileCtrl', function ($scope, $http, $firebaseObject) {
     $scope.background = $firebaseObject(ref);
 
 
+
     $scope.signOut = function () {
         ref.unauth();
         console.log("User has just logged out");
@@ -468,6 +469,10 @@ linkedin.controller('ProfileCtrl', function ($scope, $http, $firebaseObject) {
     };
 
     // Summary
+
+    $scope.editSummary = function () {
+        $scope.summaryTexarea = angular.copy($scope.background.summary).replace(/<br \/>/gi, "\n");
+    };
 
     $scope.saveSummary = function () {
         $scope.background.summary = $scope.summaryTexarea.replace(/\n/gi, "<br />");

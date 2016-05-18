@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    $("#show-info").click(function(){
+    $(document).on("click", "#show-info", function(){
         $("#contact-info-container").slideToggle();
     });
     
@@ -7,85 +7,85 @@ $(document).ready(function(){
         $("#pop-up-edit-name").show();
     });
     
-    $(".btn-cancel").click(function(){
+    $(document).on("click", ".btn-cancel", function(){
         $(".pop-up").hide();
     });
     
-    $(".btn-primary").click(function(){
+    $(document).on("click", ".btn-primary", function(){
         $(".pop-up").hide();
         $(".edit-section").hide();
     });
     
-    $(".edit-headline").click(function(){
+    $(document).on("click", ".edit-headline", function(){
         $("#pop-up-edit-headline").show();
     });
     
-    $(".edit-location-industry").click(function(){
+    $(document).on("click", ".edit-location-industry", function(){
         $("#pop-up-edit-location-industry").show();
     });
     
-    $(".edit-education").click(function(){
+    $(document).on("click", ".edit-education", function(){
         $('html,body').animate({
         scrollTop: $("#background-education-container").offset().top},
         'fast');
     });
     
-    $(".edit-job").click(function(){
+    $(document).on("click", ".edit-job", function(){
         $('html,body').animate({
         scrollTop: $("#background-experience-container").offset().top},
         'fast');
     });
     
-    $(".edit-summary").click(function(){
+    $(document).on("click", ".edit-summary", function(){
         $(".summary-content>p").hide();
         $(".edit-summary-container").show();
     });
     
-    $(".edit-summary-container .btn-cancel").click(function(){
+    $(document).on("click", ".edit-summary-container .btn-cancel", function(){
         $(".summary-content>p").show();
         $(".edit-summary-container").hide();
     });
     
-    $("#btn-add-position").click(function(){
+    $(document).on("click", "#btn-add-position", function(){
         $(".add-position-container").show();
     });
     
-    $("#btn-cancel-add-position").click(function(){
+    $(document).on("click", "#btn-cancel-add-position", function(){
         $(".add-position-container").hide();
     });
     
-    $("#btn-add-education").click(function(){
+    $(document).on("click", "#btn-add-education", function(){
         $(".add-education-container").show();
     });
     
-    $("#btn-cancel-add-education").click(function(){
+    $(document).on("click", "#btn-cancel-add-education", function(){
         $(".add-education-container").hide();
     });
     
-    $("#btn-add-skill").click(function(){
+    $(document).on("click", "#btn-add-skill", function(){
         $(".add-skill-container").show();
     });
     
-    $(".edit-avatar").click(function(){
+    $(document).on("click", ".edit-avatar", function(){
         $(".pop-up-edit-avatar").show();
     });
     
-    $("#btn-cancel-add-skill").click(function(){
+    $("#btn-cancel-add-skill", function(){
         $(".add-skill-container").hide();
     });
     
     
     
-    $("#btn-cancel-add-project").click(function(){
+    $(document).on("click", "#btn-cancel-add-project", function(){
         $(".add-project-container").hide();
     });
 
-    $("#btn-save-summary").click(function(){
+    $(document).on("click", "#btn-save-summary", function(){
         $(".summary-content>p").show();
         $(".edit-summary-container").hide();
     });
 
-    $("#btn-save-exp").click(function(){
+    $(document).on("click", "#btn-save-exp", function(){
         $(".add-position-container").hide();
         $(".add-position-container input").val('');
         $(".add-position-container textarea").val('');
@@ -93,19 +93,19 @@ $(document).ready(function(){
         $(".add-position-container input").attr('checked', false);
     });
 
-    $("#btn-save-project").click(function(){
+    $(document).on("click", "#btn-save-project", function(){
         $(".add-project-container").hide();
         $(".add-project-container input").val('');
         $(".add-project-container textarea").val('');
         $(".add-project-container select").val('');
     });
 
-    $("#btn-save-skill").click(function(){
+    $(document).on("click", "#btn-save-skill", function(){
         $(".add-skill-container").hide();
         $(".add-skill-container input").val('');
     });
 
-    $("#btn-save-education").click(function(){
+    $(document).on("click", "#btn-save-education", function(){
         $(".add-education-container").hide();
         $(".add-education-container input").val('');
         $(".add-education-container textarea").val('');
@@ -123,7 +123,7 @@ $(document).ready(function(){
         $(".add-position-container").hide();
     });
     
-    $("#btn-add-project").click(function(){
+    $(document).on("click", "#btn-add-project", function(){
         $(".add-project-container").show();
         $('html,body').animate({
                 scrollTop: $("#background-project-container").offset().top},
